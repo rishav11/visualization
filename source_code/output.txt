@@ -1,0 +1,10 @@
+postalCodeEx: ^([a-zA-Z])([0-9])([a-zA-Z])(\s)([0-9])([a-zA-Z])([0-9])$
+**********TESTS FOR postalCodeEx**********
+FOUND MATCH: "V5X 1A6"
+FOUND MATCH: "V3R 0G5"
+FOUND MATCH: "I5J 6K7"
+urlCodeEx: ^(www)(\.)([a-zA-Z])+(\.)(com)
+**********TESTS FOR urlCodeEx**********
+FOUND MATCH: "www.google.com"
+FOUND MATCH: "www.facebook.com"
+FOUND MATCH: "www.youtube.com"

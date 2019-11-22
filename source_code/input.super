@@ -1,0 +1,29 @@
+expression postalCodeEx {
+starts with 1 of: character,
+1 of: digit,
+1 of: character,
+1 of: whitespace,
+1 of: digit,
+1 of: character,
+ends with 1 of: digit,
+}
+
+test postalCodeEx with {
+"V5X 1A6",
+"V3R 0G5",
+"I5J 6K7"
+}
+
+expression urlCodeEx {
+starts with 1 of: "www",
+1 of: ".",
+1 or more of: character,
+1 of: ".",
+1 of: "com",
+}
+
+test urlCodeEx with {
+"www.google.com",
+"www.facebook.com",
+"www.youtube.com"
+}
