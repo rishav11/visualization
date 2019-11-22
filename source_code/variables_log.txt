@@ -1,0 +1,12 @@
+Class name: ast.ANCHOR@5e2de80c
+Variable name: anchor
+Variable value: startswith
++++++++++++++++++++++++++++++++
+Class name: ast.ANCHOR@1d44bcfa
+Variable name: anchor
+Variable value: endswith
++++++++++++++++++++++++++++++++
+Class name: ast.ANCHOR@266474c2
+Variable name: anchor
+Variable value: startswith
++++++++++++++++++++++++++++++++

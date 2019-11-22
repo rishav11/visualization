@@ -9,9 +9,7 @@ public class ANCHOR extends STATEMENT {
     @Override
     public void parse(){
         anchor = tokenizer.getNext();
-        Logger.AccessFieldsUsingReflection(this);
-        anchor = anchor;
-        Logger.AccessFieldsUsingReflection(this);
+        Logger.log(this, anchor);
     }
 
     @Override
