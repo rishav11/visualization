@@ -3,6 +3,8 @@
 .vscode
 
 source_code/.idea
+json_converter/env
+json_converter/.idea
 
 # OS generated files #
 ######################

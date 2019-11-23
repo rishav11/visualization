@@ -8,7 +8,7 @@ public class STRINGDEF extends KEYWORD {
     @Override
     public void parse(){
         str = tokenizer.getNext();
-        Logger.log(this, str);
+        //Logger.log(this, str); deleted because repetitive from KEYWORD log
     }
 
     @Override
