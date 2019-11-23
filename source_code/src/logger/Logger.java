@@ -3,6 +3,8 @@ package logger;
 import java.io.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Logger {
 
@@ -31,6 +33,11 @@ public class Logger {
     }
 
     private static boolean isChangedVar(Object reflectionVar, Object realVar) {
+        ArrayList<?> list;
+        if (reflectionVar instanceof ArrayList<?>) {
+            list = (ArrayList<?>) reflectionVar;
+            return list.contains(realVar);
+        }
         return (reflectionVar.equals(realVar));
     }
 

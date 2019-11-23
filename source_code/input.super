@@ -15,7 +15,7 @@ test postalCodeEx with {
 }
 
 expression urlCodeEx {
-starts with 1 of: "www",
+starts with 3 of: "w",
 1 of: ".",
 1 or more of: character,
 1 of: ".",
@@ -26,4 +26,25 @@ test urlCodeEx with {
 "www.google.com",
 "www.facebook.com",
 "www.youtube.com"
+}
+
+expression phoneNumEx {
+10 to 11 of: digit,
+}
+
+test phoneNumEx with {
+"7781234567",
+"17781234567",
+"1"
+}
+
+expression canadaPhoneNumEx {
+starts with 1 of: digit from 1 to 5,
+10 of: digit
+}
+
+test canadaPhoneNumEx with {
+"17781234567",
+"07781234567",
+"57781234567"
 }

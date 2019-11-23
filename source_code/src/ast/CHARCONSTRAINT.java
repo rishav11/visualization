@@ -1,23 +1,39 @@
 package ast;
 
+import logger.Logger;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class CHARCONSTRAINT extends CHARDEF {
     private List<String> chars = new ArrayList<>();
+    private String loggerString;
 
     @Override
     public void parse(){
         tokenizer.getAndCheckNext("from");
-        chars.add(tokenizer.getNext());
+        String firstCharConstraint = tokenizer.getNext();
+        chars.add(firstCharConstraint);
+        loggerString = "from" + firstCharConstraint;
+
         tokenizer.getAndCheckNext("to");
-        chars.add(tokenizer.getNext());
+        String secondCharConstraint = tokenizer.getNext();
+        chars.add(secondCharConstraint);
+        loggerString = loggerString.concat("to" + secondCharConstraint);
+
         while (tokenizer.checkToken("and")) {
             tokenizer.getAndCheckNext("and");
-            chars.add(tokenizer.getNext());
+            String xCharConstraint = tokenizer.getNext();
+            chars.add(xCharConstraint);
+            loggerString = loggerString.concat("and" + xCharConstraint);
+
             tokenizer.getAndCheckNext("to");
-            chars.add(tokenizer.getNext());
+            String yCharConstraint = tokenizer.getNext();
+            chars.add(yCharConstraint);
+            loggerString = loggerString.concat("to" + yCharConstraint);
         }
+
+        Logger.log(this, loggerString);
     }
 
     @Override

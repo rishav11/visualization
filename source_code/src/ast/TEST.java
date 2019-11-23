@@ -2,6 +2,7 @@ package ast;
 
 import libs.NameCheckException;
 import libs.Node;
+import logger.Logger;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -9,18 +10,20 @@ import java.util.regex.Pattern;
 
 public class TEST extends STATEMENT {
 
-    private String name ;
-    private ArrayList<String> tests =  new ArrayList<>();
+    private String name;
+    private ArrayList<String> tests = new ArrayList<>();
 
     @Override
     public void parse(){
         tokenizer.getAndCheckNext("test") ;
         name = tokenizer.getNext();
+        Logger.log(this, name);
         tokenizer.getAndCheckNext("with");
         tokenizer.getAndCheckNext("\\{");
         while(!tokenizer.checkToken("\\}")){
             String test = tokenizer.getNext();
-            tests.add(test) ;
+            tests.add(test);
+            Logger.log(this, test);
             if (!tokenizer.checkToken("\\}")) {
                 tokenizer.getAndCheckNext(",");
             }

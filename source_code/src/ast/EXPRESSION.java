@@ -1,6 +1,8 @@
 package ast;
 
 import libs.Node;
+import logger.Logger;
+
 import java.util.ArrayList;
 
 public class EXPRESSION extends STATEMENT {
@@ -12,11 +14,13 @@ public class EXPRESSION extends STATEMENT {
     public void parse(){
         tokenizer.getAndCheckNext("expression");
         name = tokenizer.getNext();
+        Logger.log(this, name);
         tokenizer.getAndCheckNext("\\{");
         while (!tokenizer.checkToken("\\}")) {
             RULE rule = new RULE();
             rule.parse();
             rules.add(rule);
+            
             if (!tokenizer.checkToken("\\}")) {
                 tokenizer.getAndCheckNext(",");
             }

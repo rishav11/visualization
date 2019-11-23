@@ -1,11 +1,14 @@
 package ast;
 
+import logger.Logger;
+
 public class STRINGDEF extends KEYWORD {
     private String str;
 
     @Override
     public void parse(){
         str = tokenizer.getNext();
+        Logger.log(this, str);
     }
 
     @Override

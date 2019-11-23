@@ -1,5 +1,7 @@
 package ast;
 
+import logger.Logger;
+
 import javax.swing.plaf.synth.SynthEditorPaneUI;
 import java.util.ArrayList;
 
@@ -8,22 +10,36 @@ public class QUANTIFIER extends STATEMENT {
     private int digit;
     private int toDigit;
     private int isExactly;
+    // this variable is to keep track of the whole strong so it passes
+    // isChangedVar in logger
+    private String loggerString;
 
     @Override
     public void parse() {
         String d = tokenizer.getNext();
+        loggerString = d;
+
         digit = Integer.parseInt(d);
+
         String exact = tokenizer.getNext();
+        loggerString = loggerString.concat(exact);
+
         if (exact.equals("of")) {
             isExactly = 0;
+            Logger.log(this, loggerString);
         } else if (exact.equals("ormoreof")) {
             isExactly = 1;
+            Logger.log(this, loggerString);
         } else if (exact.equals("to")) {
-            isExactly = 2 ;
-            toDigit = Integer.parseInt(tokenizer.getNext());
+            isExactly = 2;
+            String toDigitString = tokenizer.getNext();
+            loggerString = loggerString.concat(toDigitString);
+            toDigit = Integer.parseInt(toDigitString);
             tokenizer.getAndCheckNext("of");
-        }
+            loggerString = loggerString.concat("of");
 
+            Logger.log(this, loggerString);
+        }
     }
 
     @Override
