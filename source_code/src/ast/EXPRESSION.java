@@ -20,7 +20,7 @@ public class EXPRESSION extends STATEMENT {
             RULE rule = new RULE();
             rule.parse();
             rules.add(rule);
-            
+
             if (!tokenizer.checkToken("\\}")) {
                 tokenizer.getAndCheckNext(",");
             }
