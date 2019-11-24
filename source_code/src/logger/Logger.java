@@ -1,5 +1,8 @@
 package logger;
 
+import javafx.beans.value.ObservableValue;
+
+import javax.swing.event.ChangeListener;
 import java.io.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -54,6 +57,21 @@ public class Logger {
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    public static void logTwo(Object obj, String varName){
+        try {
+            Field field = obj.getClass().getDeclaredField(varName);
+            field.setAccessible(true);
+            write("Class name: " + obj + "\n");
+            write("Variable name: " + field.getName() + "\n");
+            write("Variable value: " + field.get(obj) + "\n");
+            write("+++++++++++++++++++++++++++++++\n");
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
         }
     }
 }

@@ -1,220 +1,284 @@
-Class name: ast.EXPRESSION@64616ca2
+Class name: ast.EXPRESSION@5e2de80c
 Variable name: name
 Variable value: postalCodeEx
 +++++++++++++++++++++++++++++++
-Class name: ast.ANCHOR@735f7ae5
+Class name: ast.ANCHOR@266474c2
 Variable name: anchor
 Variable value: startswith
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@2c6a3f77
-Variable name: loggerString
-Variable value: 1of
+Class name: ast.QUANTIFIER@5e481248
+Variable name: digit
+Variable value: 1
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@5315b42e
+Class name: ast.QUANTIFIER@5e481248
+Variable name: isExactly
+Variable value: 0
++++++++++++++++++++++++++++++++
+Class name: ast.KEYWORD@63947c6b
 Variable name: loggerString
 Variable value: character
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@2ef9b8bc
-Variable name: loggerString
-Variable value: 1of
+Class name: ast.QUANTIFIER@2b193f2d
+Variable name: digit
+Variable value: 1
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@1e67b872
+Class name: ast.QUANTIFIER@2b193f2d
+Variable name: isExactly
+Variable value: 0
++++++++++++++++++++++++++++++++
+Class name: ast.KEYWORD@355da254
 Variable name: loggerString
 Variable value: digit
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@60addb54
-Variable name: loggerString
-Variable value: 1of
+Class name: ast.QUANTIFIER@4dc63996
+Variable name: digit
+Variable value: 1
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@3f2a3a5
+Class name: ast.QUANTIFIER@4dc63996
+Variable name: isExactly
+Variable value: 0
++++++++++++++++++++++++++++++++
+Class name: ast.KEYWORD@d716361
 Variable name: loggerString
 Variable value: character
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@4cb2c100
-Variable name: loggerString
-Variable value: 1of
+Class name: ast.QUANTIFIER@6ff3c5b5
+Variable name: digit
+Variable value: 1
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@614c5515
+Class name: ast.QUANTIFIER@6ff3c5b5
+Variable name: isExactly
+Variable value: 0
++++++++++++++++++++++++++++++++
+Class name: ast.KEYWORD@3764951d
 Variable name: loggerString
 Variable value: whitespace
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@77b52d12
-Variable name: loggerString
-Variable value: 1of
+Class name: ast.QUANTIFIER@4b1210ee
+Variable name: digit
+Variable value: 1
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@2d554825
+Class name: ast.QUANTIFIER@4b1210ee
+Variable name: isExactly
+Variable value: 0
++++++++++++++++++++++++++++++++
+Class name: ast.KEYWORD@4d7e1886
 Variable name: loggerString
 Variable value: digit
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@68837a77
-Variable name: loggerString
-Variable value: 1of
+Class name: ast.QUANTIFIER@3cd1a2f1
+Variable name: digit
+Variable value: 1
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@6be46e8f
+Class name: ast.QUANTIFIER@3cd1a2f1
+Variable name: isExactly
+Variable value: 0
++++++++++++++++++++++++++++++++
+Class name: ast.KEYWORD@2f0e140b
 Variable name: loggerString
 Variable value: character
 +++++++++++++++++++++++++++++++
-Class name: ast.ANCHOR@3567135c
+Class name: ast.ANCHOR@7440e464
 Variable name: anchor
 Variable value: endswith
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@327471b5
-Variable name: loggerString
-Variable value: 1of
+Class name: ast.QUANTIFIER@49476842
+Variable name: digit
+Variable value: 1
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@4157f54e
+Class name: ast.QUANTIFIER@49476842
+Variable name: isExactly
+Variable value: 0
++++++++++++++++++++++++++++++++
+Class name: ast.KEYWORD@78308db1
 Variable name: loggerString
 Variable value: digit
 +++++++++++++++++++++++++++++++
-Class name: ast.TEST@47f6473
+Class name: ast.TEST@5451c3a8
 Variable name: name
 Variable value: postalCodeEx
 +++++++++++++++++++++++++++++++
-Class name: ast.TEST@47f6473
+Class name: ast.TEST@5451c3a8
 Variable name: tests
 Variable value: "V5X 1A6"
 +++++++++++++++++++++++++++++++
-Class name: ast.TEST@47f6473
+Class name: ast.TEST@5451c3a8
 Variable name: tests
 Variable value: "V3R 0G5"
 +++++++++++++++++++++++++++++++
-Class name: ast.TEST@47f6473
+Class name: ast.TEST@5451c3a8
 Variable name: tests
 Variable value: "I5J 6K7"
 +++++++++++++++++++++++++++++++
-Class name: ast.EXPRESSION@15975490
+Class name: ast.EXPRESSION@2626b418
 Variable name: name
 Variable value: urlCodeEx
 +++++++++++++++++++++++++++++++
-Class name: ast.ANCHOR@6b143ee9
+Class name: ast.ANCHOR@5a07e868
 Variable name: anchor
 Variable value: startswith
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@1936f0f5
-Variable name: loggerString
-Variable value: 3of
+Class name: ast.QUANTIFIER@76ed5528
+Variable name: digit
+Variable value: 3
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@6615435c
+Class name: ast.QUANTIFIER@76ed5528
+Variable name: isExactly
+Variable value: 0
++++++++++++++++++++++++++++++++
+Class name: ast.KEYWORD@2c7b84de
 Variable name: loggerString
 Variable value: "w"
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@4909b8da
-Variable name: loggerString
-Variable value: 1of
+Class name: ast.QUANTIFIER@3fee733d
+Variable name: digit
+Variable value: 1
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@3a03464
+Class name: ast.QUANTIFIER@3fee733d
+Variable name: isExactly
+Variable value: 0
++++++++++++++++++++++++++++++++
+Class name: ast.KEYWORD@5acf9800
 Variable name: loggerString
 Variable value: "."
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@2d3fcdbd
-Variable name: loggerString
-Variable value: 1ormoreof
+Class name: ast.QUANTIFIER@4617c264
+Variable name: digit
+Variable value: 1
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@617c74e5
+Class name: ast.QUANTIFIER@4617c264
+Variable name: isExactly
+Variable value: 1
++++++++++++++++++++++++++++++++
+Class name: ast.KEYWORD@36baf30c
 Variable name: loggerString
 Variable value: character
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@6537cf78
-Variable name: loggerString
-Variable value: 1of
+Class name: ast.QUANTIFIER@7a81197d
+Variable name: digit
+Variable value: 1
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@67b6d4ae
+Class name: ast.QUANTIFIER@7a81197d
+Variable name: isExactly
+Variable value: 0
++++++++++++++++++++++++++++++++
+Class name: ast.KEYWORD@5ca881b5
 Variable name: loggerString
 Variable value: "."
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@34b7bfc0
-Variable name: loggerString
-Variable value: 1of
+Class name: ast.QUANTIFIER@24d46ca6
+Variable name: digit
+Variable value: 1
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@366e2eef
+Class name: ast.QUANTIFIER@24d46ca6
+Variable name: isExactly
+Variable value: 0
++++++++++++++++++++++++++++++++
+Class name: ast.KEYWORD@4517d9a3
 Variable name: loggerString
 Variable value: "com"
 +++++++++++++++++++++++++++++++
-Class name: ast.TEST@6df97b55
+Class name: ast.TEST@372f7a8d
 Variable name: name
 Variable value: urlCodeEx
 +++++++++++++++++++++++++++++++
-Class name: ast.TEST@6df97b55
+Class name: ast.TEST@372f7a8d
 Variable name: tests
 Variable value: "www.google.com"
 +++++++++++++++++++++++++++++++
-Class name: ast.TEST@6df97b55
+Class name: ast.TEST@372f7a8d
 Variable name: tests
 Variable value: "www.facebook.com"
 +++++++++++++++++++++++++++++++
-Class name: ast.TEST@6df97b55
+Class name: ast.TEST@372f7a8d
 Variable name: tests
 Variable value: "www.youtube.com"
 +++++++++++++++++++++++++++++++
-Class name: ast.EXPRESSION@3cbbc1e0
+Class name: ast.EXPRESSION@2f92e0f4
 Variable name: name
 Variable value: phoneNumEx
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@35fb3008
-Variable name: loggerString
-Variable value: 10to11of
+Class name: ast.QUANTIFIER@28a418fc
+Variable name: digit
+Variable value: 10
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@7225790e
+Class name: ast.QUANTIFIER@28a418fc
+Variable name: isExactly
+Variable value: 2
++++++++++++++++++++++++++++++++
+Class name: ast.QUANTIFIER@28a418fc
+Variable name: toDigit
+Variable value: 11
++++++++++++++++++++++++++++++++
+Class name: ast.KEYWORD@5305068a
 Variable name: loggerString
 Variable value: digit
 +++++++++++++++++++++++++++++++
-Class name: ast.TEST@54a097cc
+Class name: ast.TEST@1f32e575
 Variable name: name
 Variable value: phoneNumEx
 +++++++++++++++++++++++++++++++
-Class name: ast.TEST@54a097cc
+Class name: ast.TEST@1f32e575
 Variable name: tests
 Variable value: "7781234567"
 +++++++++++++++++++++++++++++++
-Class name: ast.TEST@54a097cc
+Class name: ast.TEST@1f32e575
 Variable name: tests
 Variable value: "17781234567"
 +++++++++++++++++++++++++++++++
-Class name: ast.TEST@54a097cc
+Class name: ast.TEST@1f32e575
 Variable name: tests
 Variable value: "1"
 +++++++++++++++++++++++++++++++
-Class name: ast.EXPRESSION@36f6e879
+Class name: ast.EXPRESSION@279f2327
 Variable name: name
 Variable value: canadaPhoneNumEx
 +++++++++++++++++++++++++++++++
-Class name: ast.ANCHOR@5a61f5df
+Class name: ast.ANCHOR@2ff4acd0
 Variable name: anchor
 Variable value: startswith
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@3551a94
-Variable name: loggerString
-Variable value: 1of
+Class name: ast.QUANTIFIER@54bedef2
+Variable name: digit
+Variable value: 1
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@531be3c5
+Class name: ast.QUANTIFIER@54bedef2
+Variable name: isExactly
+Variable value: 0
++++++++++++++++++++++++++++++++
+Class name: ast.KEYWORD@5caf905d
 Variable name: loggerString
 Variable value: digit
 +++++++++++++++++++++++++++++++
-Class name: ast.DIGITCONSTRAINT@735b478
+Class name: ast.DIGITCONSTRAINT@8efb846
 Variable name: loggerString
 Variable value: from1to5
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@2c9f9fb0
-Variable name: loggerString
-Variable value: 10of
+Class name: ast.QUANTIFIER@2a84aee7
+Variable name: digit
+Variable value: 10
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@2096442d
+Class name: ast.QUANTIFIER@2a84aee7
+Variable name: isExactly
+Variable value: 0
++++++++++++++++++++++++++++++++
+Class name: ast.KEYWORD@a09ee92
 Variable name: loggerString
 Variable value: digit
 +++++++++++++++++++++++++++++++
-Class name: ast.TEST@9f70c54
+Class name: ast.TEST@30f39991
 Variable name: name
 Variable value: canadaPhoneNumEx
 +++++++++++++++++++++++++++++++
-Class name: ast.TEST@9f70c54
+Class name: ast.TEST@30f39991
 Variable name: tests
 Variable value: "17781234567"
 +++++++++++++++++++++++++++++++
-Class name: ast.TEST@9f70c54
+Class name: ast.TEST@30f39991
 Variable name: tests
 Variable value: "07781234567"
 +++++++++++++++++++++++++++++++
-Class name: ast.TEST@9f70c54
+Class name: ast.TEST@30f39991
 Variable name: tests
 Variable value: "57781234567"
 +++++++++++++++++++++++++++++++

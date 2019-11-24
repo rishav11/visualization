@@ -10,36 +10,27 @@ public class QUANTIFIER extends STATEMENT {
     private int digit;
     private int toDigit;
     private int isExactly;
-    // this variable is to keep track of the whole strong so it passes
-    // isChangedVar in logger
-    private String loggerString;
 
     @Override
     public void parse() {
         String d = tokenizer.getNext();
-        loggerString = d;
-
         digit = Integer.parseInt(d);
-
+        Logger.logTwo(this, "digit");
         String exact = tokenizer.getNext();
-        loggerString = loggerString.concat(exact);
-
         if (exact.equals("of")) {
             isExactly = 0;
-            Logger.log(this, loggerString);
+            Logger.logTwo(this, "isExactly");
         } else if (exact.equals("ormoreof")) {
             isExactly = 1;
-            Logger.log(this, loggerString);
+            Logger.logTwo(this, "isExactly");
         } else if (exact.equals("to")) {
-            isExactly = 2;
-            String toDigitString = tokenizer.getNext();
-            loggerString = loggerString.concat(toDigitString);
-            toDigit = Integer.parseInt(toDigitString);
+            isExactly = 2 ;
+            Logger.logTwo(this, "isExactly");
+            toDigit = Integer.parseInt(tokenizer.getNext());
+            Logger.logTwo(this, "toDigit");
             tokenizer.getAndCheckNext("of");
-            loggerString = loggerString.concat("of");
-
-            Logger.log(this, loggerString);
         }
+
     }
 
     @Override
