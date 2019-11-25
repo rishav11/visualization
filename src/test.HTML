@@ -10,12 +10,20 @@
     </head>
     <body>
 
-
-        <p id="demo"> Test </p>
+    <div id="draw-group"> 
+        <p id="demo1"> # of Changes </p>
+        <p id="demo2"> # of Variables </p>
          <script type="text/javascript">
+
+         // Gets & Prints the number of variables that there are.
+         document.getElementById('demo2').innerHTML = data["ast.EXPRESSION"]["@2cb4c3ab"] ;
+
+         //Creates an array of the number of variables there are in the js object and prints it on screen.
+         const numberOfVariables = Object.values(data["ast.EXPRESSION"]["@2cb4c3ab"]) ;
+         document.getElementById('demo2').innerHTML = numberOfVariables.length ;
          
          // Gets & prints the data from the sample.js file.
-         document.getElementById('demo').innerHTML = data["ast.EXPRESSION"]["@2cb4c3ab"]["rules"] ;
+         document.getElementById('demo1').innerHTML = data["ast.EXPRESSION"]["@2cb4c3ab"]["rules"] ;
 
          // Creates an array of the values inside the js object.
          const values = Object.values(data["ast.EXPRESSION"]["@2cb4c3ab"]["rules"]) ;
@@ -25,26 +33,24 @@
 
          // Prints the length of the array that is made up of the changes that a variabe
          // goes through in another program.
-         document.getElementById('demo').innerHTML = values.length ;
+         document.getElementById('demo1').innerHTML = values.length ;
          
-         </script>
 
-         <div id="draw-group"> 
 
-            <script type="text/javascript">
+         // Code for the drawing part of this project.
+
+            for(var i = 0; i < numberOfVariables.length; i++) {
 
                  var elem = document.getElementById('draw-group');
                   var two = new Two({ width: 800, height: 250 }).appendTo(elem);
 
                   var star1 = two.makeStar(150, 0, 100, 25, values.length );
-                  var star2 = two.makeStar(-150, 0, 100, 50, 7);
                   star1.fill = '#9400D3';
                   star1.stroke = 'Chartreuse';
-                  star2.fill = 'rgba(0, 200, 255, 0.75)';
-                  star2.noStroke();
+                 
 
                     // Groups can take an array of shapes and/or groups.
-                    var group = two.makeGroup(star1, star2);
+                    var group = two.makeGroup(star1);
 
                  // And have translation, rotation, scale like all shapes.
                  group.translation.set(two.width / 2, two.height / 2);
@@ -55,6 +61,12 @@
                    group.linewidth = 7;
 
                    two.update();
+
+                   //Star 2
+                   //var star2 = two.makeStar(-150, 0, 100, 50, 7);
+                   // star2.fill = 'rgba(0, 200, 255, 0.75)';
+                   //star2.noStroke();
+            }
            </script>
         </div>
     </body>
