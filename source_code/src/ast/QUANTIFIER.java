@@ -1,5 +1,4 @@
 package ast;
-import logger.Logger;
 
 import javax.swing.plaf.synth.SynthEditorPaneUI;
 import java.util.ArrayList;
@@ -14,19 +13,14 @@ public class QUANTIFIER extends STATEMENT {
     public void parse() {
         String d = tokenizer.getNext();
         digit = Integer.parseInt(d);
-Logger.logTwo(this, "digit");
         String exact = tokenizer.getNext();
         if (exact.equals("of")) {
             isExactly = 0;
-Logger.logTwo(this, "isExactly");
         } else if (exact.equals("ormoreof")) {
             isExactly = 1;
-Logger.logTwo(this, "isExactly");
         } else if (exact.equals("to")) {
-            isExactly = 2 ;
-Logger.logTwo(this, "isExactly");
+            isExactly = 2;
             toDigit = Integer.parseInt(tokenizer.getNext());
-Logger.logTwo(this, "toDigit");
             tokenizer.getAndCheckNext("of");
         }
 

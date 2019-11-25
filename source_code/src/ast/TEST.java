@@ -1,5 +1,4 @@
 package ast;
-import logger.Logger;
 
 import libs.NameCheckException;
 import libs.Node;
@@ -17,7 +16,6 @@ public class TEST extends STATEMENT {
     public void parse() {
         tokenizer.getAndCheckNext("test");
         name = tokenizer.getNext();
-Logger.logTwo(this, "name");
         tokenizer.getAndCheckNext("with");
         tokenizer.getAndCheckNext("\\{");
         while (!tokenizer.checkToken("\\}")) {

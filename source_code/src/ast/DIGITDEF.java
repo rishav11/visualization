@@ -1,5 +1,4 @@
 package ast;
-import logger.Logger;
 
 public class DIGITDEF extends KEYWORD {
     private DIGITCONSTRAINT d;
@@ -9,7 +8,6 @@ public class DIGITDEF extends KEYWORD {
         tokenizer.getAndCheckNext("digit");
         if (tokenizer.checkToken("from")) {
             d = new DIGITCONSTRAINT();
-Logger.logTwo(this, "d");
             d.parse();
         }
     }

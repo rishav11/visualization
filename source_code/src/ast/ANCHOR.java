@@ -1,5 +1,4 @@
 package ast;
-import logger.Logger;
 
 public class ANCHOR extends STATEMENT {
 
@@ -8,7 +7,6 @@ public class ANCHOR extends STATEMENT {
     @Override
     public void parse() {
         anchor = tokenizer.getNext();
-Logger.logTwo(this, "anchor");
     }
 
     @Override

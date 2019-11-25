@@ -26,6 +26,14 @@ Class name: ast.KEYWORD@355da254
 Variable name: k
 Variable value: ast.CHARDEF@4dc63996
 +++++++++++++++++++++++++++++++
+Class name: ast.RULE@266474c2
+Variable name: keywords
+Variable value: [ast.KEYWORD@355da254]
++++++++++++++++++++++++++++++++
+Class name: ast.EXPRESSION@5e2de80c
+Variable name: rules
+Variable value: [ast.RULE@266474c2]
++++++++++++++++++++++++++++++++
 Class name: ast.RULE@d716361
 Variable name: quantifier
 Variable value: ast.QUANTIFIER@6ff3c5b5
@@ -42,6 +50,14 @@ Class name: ast.KEYWORD@3764951d
 Variable name: k
 Variable value: ast.DIGITDEF@4b1210ee
 +++++++++++++++++++++++++++++++
+Class name: ast.RULE@d716361
+Variable name: keywords
+Variable value: [ast.KEYWORD@3764951d]
++++++++++++++++++++++++++++++++
+Class name: ast.EXPRESSION@5e2de80c
+Variable name: rules
+Variable value: [ast.RULE@266474c2, ast.RULE@d716361]
++++++++++++++++++++++++++++++++
 Class name: ast.RULE@4d7e1886
 Variable name: quantifier
 Variable value: ast.QUANTIFIER@3cd1a2f1
@@ -57,6 +73,14 @@ Variable value: 0
 Class name: ast.KEYWORD@2f0e140b
 Variable name: k
 Variable value: ast.CHARDEF@7440e464
++++++++++++++++++++++++++++++++
+Class name: ast.RULE@4d7e1886
+Variable name: keywords
+Variable value: [ast.KEYWORD@2f0e140b]
++++++++++++++++++++++++++++++++
+Class name: ast.EXPRESSION@5e2de80c
+Variable name: rules
+Variable value: [ast.RULE@266474c2, ast.RULE@d716361, ast.RULE@4d7e1886]
 +++++++++++++++++++++++++++++++
 Class name: ast.RULE@49476842
 Variable name: quantifier
@@ -78,6 +102,14 @@ Class name: ast.STRINGDEF@5451c3a8
 Variable name: str
 Variable value: whitespace
 +++++++++++++++++++++++++++++++
+Class name: ast.RULE@49476842
+Variable name: keywords
+Variable value: [ast.KEYWORD@27c170f0]
++++++++++++++++++++++++++++++++
+Class name: ast.EXPRESSION@5e2de80c
+Variable name: rules
+Variable value: [ast.RULE@266474c2, ast.RULE@d716361, ast.RULE@4d7e1886, ast.RULE@49476842]
++++++++++++++++++++++++++++++++
 Class name: ast.RULE@5a07e868
 Variable name: quantifier
 Variable value: ast.QUANTIFIER@76ed5528
@@ -94,6 +126,14 @@ Class name: ast.KEYWORD@2c7b84de
 Variable name: k
 Variable value: ast.DIGITDEF@3fee733d
 +++++++++++++++++++++++++++++++
+Class name: ast.RULE@5a07e868
+Variable name: keywords
+Variable value: [ast.KEYWORD@2c7b84de]
++++++++++++++++++++++++++++++++
+Class name: ast.EXPRESSION@5e2de80c
+Variable name: rules
+Variable value: [ast.RULE@266474c2, ast.RULE@d716361, ast.RULE@4d7e1886, ast.RULE@49476842, ast.RULE@5a07e868]
++++++++++++++++++++++++++++++++
 Class name: ast.RULE@5acf9800
 Variable name: quantifier
 Variable value: ast.QUANTIFIER@4617c264
@@ -109,6 +149,14 @@ Variable value: 0
 Class name: ast.KEYWORD@36baf30c
 Variable name: k
 Variable value: ast.CHARDEF@7a81197d
++++++++++++++++++++++++++++++++
+Class name: ast.RULE@5acf9800
+Variable name: keywords
+Variable value: [ast.KEYWORD@36baf30c]
++++++++++++++++++++++++++++++++
+Class name: ast.EXPRESSION@5e2de80c
+Variable name: rules
+Variable value: [ast.RULE@266474c2, ast.RULE@d716361, ast.RULE@4d7e1886, ast.RULE@49476842, ast.RULE@5a07e868, ast.RULE@5acf9800]
 +++++++++++++++++++++++++++++++
 Class name: ast.RULE@5ca881b5
 Variable name: anchor
@@ -134,199 +182,359 @@ Class name: ast.KEYWORD@372f7a8d
 Variable name: k
 Variable value: ast.DIGITDEF@2f92e0f4
 +++++++++++++++++++++++++++++++
-Class name: ast.TEST@5305068a
+Class name: ast.RULE@5ca881b5
+Variable name: keywords
+Variable value: [ast.KEYWORD@372f7a8d]
++++++++++++++++++++++++++++++++
+Class name: ast.EXPRESSION@5e2de80c
+Variable name: rules
+Variable value: [ast.RULE@266474c2, ast.RULE@d716361, ast.RULE@4d7e1886, ast.RULE@49476842, ast.RULE@5a07e868, ast.RULE@5acf9800, ast.RULE@5ca881b5]
++++++++++++++++++++++++++++++++
+Class name: ast.PROGRAM@5305068a
+Variable name: statements
+Variable value: [ast.EXPRESSION@5e2de80c]
++++++++++++++++++++++++++++++++
+Class name: ast.TEST@279f2327
 Variable name: name
 Variable value: postalCodeEx
 +++++++++++++++++++++++++++++++
-Class name: ast.EXPRESSION@1f32e575
+Class name: ast.TEST@279f2327
+Variable name: tests
+Variable value: ["V5X 1A6"]
++++++++++++++++++++++++++++++++
+Class name: ast.TEST@279f2327
+Variable name: tests
+Variable value: ["V5X 1A6", "V3R 0G5"]
++++++++++++++++++++++++++++++++
+Class name: ast.TEST@279f2327
+Variable name: tests
+Variable value: ["V5X 1A6", "V3R 0G5", "I5J 6K7"]
++++++++++++++++++++++++++++++++
+Class name: ast.PROGRAM@5305068a
+Variable name: statements
+Variable value: [ast.EXPRESSION@5e2de80c, ast.TEST@279f2327]
++++++++++++++++++++++++++++++++
+Class name: ast.EXPRESSION@2ff4acd0
 Variable name: name
 Variable value: urlCodeEx
 +++++++++++++++++++++++++++++++
-Class name: ast.RULE@279f2327
+Class name: ast.RULE@54bedef2
 Variable name: anchor
-Variable value: ast.ANCHOR@2ff4acd0
+Variable value: ast.ANCHOR@5caf905d
 +++++++++++++++++++++++++++++++
-Class name: ast.ANCHOR@2ff4acd0
+Class name: ast.ANCHOR@5caf905d
 Variable name: anchor
 Variable value: startswith
 +++++++++++++++++++++++++++++++
-Class name: ast.RULE@279f2327
+Class name: ast.RULE@54bedef2
 Variable name: quantifier
-Variable value: ast.QUANTIFIER@54bedef2
+Variable value: ast.QUANTIFIER@27716f4
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@54bedef2
+Class name: ast.QUANTIFIER@27716f4
 Variable name: digit
 Variable value: 3
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@54bedef2
+Class name: ast.QUANTIFIER@27716f4
 Variable name: isExactly
 Variable value: 0
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@5caf905d
+Class name: ast.KEYWORD@8efb846
 Variable name: k
-Variable value: ast.STRINGDEF@27716f4
+Variable value: ast.STRINGDEF@2a84aee7
 +++++++++++++++++++++++++++++++
-Class name: ast.STRINGDEF@27716f4
+Class name: ast.STRINGDEF@2a84aee7
 Variable name: str
 Variable value: "w"
 +++++++++++++++++++++++++++++++
-Class name: ast.RULE@8efb846
-Variable name: quantifier
-Variable value: ast.QUANTIFIER@2a84aee7
+Class name: ast.RULE@54bedef2
+Variable name: keywords
+Variable value: [ast.KEYWORD@8efb846]
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@2a84aee7
+Class name: ast.EXPRESSION@2ff4acd0
+Variable name: rules
+Variable value: [ast.RULE@54bedef2]
++++++++++++++++++++++++++++++++
+Class name: ast.RULE@a09ee92
+Variable name: quantifier
+Variable value: ast.QUANTIFIER@30f39991
++++++++++++++++++++++++++++++++
+Class name: ast.QUANTIFIER@30f39991
 Variable name: digit
 Variable value: 1
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@2a84aee7
+Class name: ast.QUANTIFIER@30f39991
 Variable name: isExactly
 Variable value: 0
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@a09ee92
+Class name: ast.KEYWORD@452b3a41
 Variable name: k
-Variable value: ast.STRINGDEF@30f39991
+Variable value: ast.STRINGDEF@4a574795
 +++++++++++++++++++++++++++++++
-Class name: ast.STRINGDEF@30f39991
+Class name: ast.STRINGDEF@4a574795
 Variable name: str
 Variable value: "."
 +++++++++++++++++++++++++++++++
-Class name: ast.RULE@452b3a41
-Variable name: quantifier
-Variable value: ast.QUANTIFIER@4a574795
+Class name: ast.RULE@a09ee92
+Variable name: keywords
+Variable value: [ast.KEYWORD@452b3a41]
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@4a574795
+Class name: ast.EXPRESSION@2ff4acd0
+Variable name: rules
+Variable value: [ast.RULE@54bedef2, ast.RULE@a09ee92]
++++++++++++++++++++++++++++++++
+Class name: ast.RULE@f6f4d33
+Variable name: quantifier
+Variable value: ast.QUANTIFIER@23fc625e
++++++++++++++++++++++++++++++++
+Class name: ast.QUANTIFIER@23fc625e
 Variable name: digit
 Variable value: 1
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@4a574795
+Class name: ast.QUANTIFIER@23fc625e
 Variable name: isExactly
 Variable value: 1
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@f6f4d33
+Class name: ast.KEYWORD@3f99bd52
 Variable name: k
-Variable value: ast.CHARDEF@23fc625e
+Variable value: ast.CHARDEF@4f023edb
 +++++++++++++++++++++++++++++++
-Class name: ast.RULE@3f99bd52
+Class name: ast.RULE@f6f4d33
+Variable name: keywords
+Variable value: [ast.KEYWORD@3f99bd52]
++++++++++++++++++++++++++++++++
+Class name: ast.EXPRESSION@2ff4acd0
+Variable name: rules
+Variable value: [ast.RULE@54bedef2, ast.RULE@a09ee92, ast.RULE@f6f4d33]
++++++++++++++++++++++++++++++++
+Class name: ast.RULE@3a71f4dd
 Variable name: quantifier
-Variable value: ast.QUANTIFIER@4f023edb
+Variable value: ast.QUANTIFIER@7adf9f5f
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@4f023edb
+Class name: ast.QUANTIFIER@7adf9f5f
 Variable name: digit
 Variable value: 1
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@4f023edb
+Class name: ast.QUANTIFIER@7adf9f5f
 Variable name: isExactly
 Variable value: 0
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@3a71f4dd
+Class name: ast.KEYWORD@85ede7b
 Variable name: k
-Variable value: ast.STRINGDEF@7adf9f5f
+Variable value: ast.STRINGDEF@5674cd4d
 +++++++++++++++++++++++++++++++
-Class name: ast.STRINGDEF@7adf9f5f
+Class name: ast.STRINGDEF@5674cd4d
 Variable name: str
 Variable value: "."
 +++++++++++++++++++++++++++++++
-Class name: ast.RULE@85ede7b
-Variable name: quantifier
-Variable value: ast.QUANTIFIER@5674cd4d
+Class name: ast.RULE@3a71f4dd
+Variable name: keywords
+Variable value: [ast.KEYWORD@85ede7b]
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@5674cd4d
+Class name: ast.EXPRESSION@2ff4acd0
+Variable name: rules
+Variable value: [ast.RULE@54bedef2, ast.RULE@a09ee92, ast.RULE@f6f4d33, ast.RULE@3a71f4dd]
++++++++++++++++++++++++++++++++
+Class name: ast.RULE@63961c42
+Variable name: quantifier
+Variable value: ast.QUANTIFIER@65b54208
++++++++++++++++++++++++++++++++
+Class name: ast.QUANTIFIER@65b54208
 Variable name: digit
 Variable value: 1
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@5674cd4d
+Class name: ast.QUANTIFIER@65b54208
 Variable name: isExactly
 Variable value: 0
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@63961c42
+Class name: ast.KEYWORD@1be6f5c3
 Variable name: k
-Variable value: ast.STRINGDEF@65b54208
+Variable value: ast.STRINGDEF@6b884d57
 +++++++++++++++++++++++++++++++
-Class name: ast.STRINGDEF@65b54208
+Class name: ast.STRINGDEF@6b884d57
 Variable name: str
 Variable value: "com"
 +++++++++++++++++++++++++++++++
-Class name: ast.TEST@1be6f5c3
+Class name: ast.RULE@63961c42
+Variable name: keywords
+Variable value: [ast.KEYWORD@1be6f5c3]
++++++++++++++++++++++++++++++++
+Class name: ast.EXPRESSION@2ff4acd0
+Variable name: rules
+Variable value: [ast.RULE@54bedef2, ast.RULE@a09ee92, ast.RULE@f6f4d33, ast.RULE@3a71f4dd, ast.RULE@63961c42]
++++++++++++++++++++++++++++++++
+Class name: ast.PROGRAM@5305068a
+Variable name: statements
+Variable value: [ast.EXPRESSION@5e2de80c, ast.TEST@279f2327, ast.EXPRESSION@2ff4acd0]
++++++++++++++++++++++++++++++++
+Class name: ast.TEST@38af3868
 Variable name: name
 Variable value: urlCodeEx
 +++++++++++++++++++++++++++++++
-Class name: ast.EXPRESSION@6b884d57
+Class name: ast.TEST@38af3868
+Variable name: tests
+Variable value: ["www.google.com"]
++++++++++++++++++++++++++++++++
+Class name: ast.TEST@38af3868
+Variable name: tests
+Variable value: ["www.google.com", "www.facebook.com"]
++++++++++++++++++++++++++++++++
+Class name: ast.TEST@38af3868
+Variable name: tests
+Variable value: ["www.google.com", "www.facebook.com", "www.youtube.com"]
++++++++++++++++++++++++++++++++
+Class name: ast.PROGRAM@5305068a
+Variable name: statements
+Variable value: [ast.EXPRESSION@5e2de80c, ast.TEST@279f2327, ast.EXPRESSION@2ff4acd0, ast.TEST@38af3868]
++++++++++++++++++++++++++++++++
+Class name: ast.EXPRESSION@77459877
 Variable name: name
 Variable value: phoneNumEx
 +++++++++++++++++++++++++++++++
-Class name: ast.RULE@38af3868
+Class name: ast.RULE@5b2133b1
 Variable name: quantifier
-Variable value: ast.QUANTIFIER@77459877
+Variable value: ast.QUANTIFIER@72ea2f77
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@77459877
+Class name: ast.QUANTIFIER@72ea2f77
 Variable name: digit
 Variable value: 10
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@77459877
+Class name: ast.QUANTIFIER@72ea2f77
 Variable name: isExactly
 Variable value: 2
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@77459877
+Class name: ast.QUANTIFIER@72ea2f77
 Variable name: toDigit
 Variable value: 11
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@5b2133b1
+Class name: ast.KEYWORD@33c7353a
 Variable name: k
-Variable value: ast.DIGITDEF@72ea2f77
+Variable value: ast.DIGITDEF@681a9515
 +++++++++++++++++++++++++++++++
-Class name: ast.TEST@33c7353a
+Class name: ast.RULE@5b2133b1
+Variable name: keywords
+Variable value: [ast.KEYWORD@33c7353a]
++++++++++++++++++++++++++++++++
+Class name: ast.EXPRESSION@77459877
+Variable name: rules
+Variable value: [ast.RULE@5b2133b1]
++++++++++++++++++++++++++++++++
+Class name: ast.PROGRAM@5305068a
+Variable name: statements
+Variable value: [ast.EXPRESSION@5e2de80c, ast.TEST@279f2327, ast.EXPRESSION@2ff4acd0, ast.TEST@38af3868, ast.EXPRESSION@77459877]
++++++++++++++++++++++++++++++++
+Class name: ast.TEST@3af49f1c
 Variable name: name
 Variable value: phoneNumEx
 +++++++++++++++++++++++++++++++
-Class name: ast.EXPRESSION@681a9515
+Class name: ast.TEST@3af49f1c
+Variable name: tests
+Variable value: ["7781234567"]
++++++++++++++++++++++++++++++++
+Class name: ast.TEST@3af49f1c
+Variable name: tests
+Variable value: ["7781234567", "17781234567"]
++++++++++++++++++++++++++++++++
+Class name: ast.TEST@3af49f1c
+Variable name: tests
+Variable value: ["7781234567", "17781234567", "1"]
++++++++++++++++++++++++++++++++
+Class name: ast.PROGRAM@5305068a
+Variable name: statements
+Variable value: [ast.EXPRESSION@5e2de80c, ast.TEST@279f2327, ast.EXPRESSION@2ff4acd0, ast.TEST@38af3868, ast.EXPRESSION@77459877, ast.TEST@3af49f1c]
++++++++++++++++++++++++++++++++
+Class name: ast.EXPRESSION@19469ea2
 Variable name: name
 Variable value: canadaPhoneNumEx
 +++++++++++++++++++++++++++++++
-Class name: ast.RULE@3af49f1c
+Class name: ast.RULE@13221655
 Variable name: anchor
-Variable value: ast.ANCHOR@19469ea2
+Variable value: ast.ANCHOR@2f2c9b19
 +++++++++++++++++++++++++++++++
-Class name: ast.ANCHOR@19469ea2
+Class name: ast.ANCHOR@2f2c9b19
 Variable name: anchor
 Variable value: startswith
 +++++++++++++++++++++++++++++++
-Class name: ast.RULE@3af49f1c
+Class name: ast.RULE@13221655
 Variable name: quantifier
-Variable value: ast.QUANTIFIER@13221655
+Variable value: ast.QUANTIFIER@31befd9f
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@13221655
+Class name: ast.QUANTIFIER@31befd9f
 Variable name: digit
 Variable value: 1
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@13221655
+Class name: ast.QUANTIFIER@31befd9f
 Variable name: isExactly
 Variable value: 0
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@2f2c9b19
+Class name: ast.KEYWORD@1c20c684
 Variable name: k
-Variable value: ast.DIGITDEF@31befd9f
+Variable value: ast.DIGITDEF@1fb3ebeb
 +++++++++++++++++++++++++++++++
-Class name: ast.DIGITDEF@31befd9f
+Class name: ast.DIGITDEF@1fb3ebeb
 Variable name: d
-Variable value: ast.DIGITCONSTRAINT@1fb3ebeb
+Variable value: ast.DIGITCONSTRAINT@1218025c
 +++++++++++++++++++++++++++++++
-Class name: ast.RULE@548c4f57
+Class name: ast.DIGITCONSTRAINT@1218025c
+Variable name: digits
+Variable value: [1]
++++++++++++++++++++++++++++++++
+Class name: ast.DIGITCONSTRAINT@1218025c
+Variable name: digits
+Variable value: [1, 5]
++++++++++++++++++++++++++++++++
+Class name: ast.RULE@13221655
+Variable name: keywords
+Variable value: [ast.KEYWORD@1c20c684]
++++++++++++++++++++++++++++++++
+Class name: ast.EXPRESSION@19469ea2
+Variable name: rules
+Variable value: [ast.RULE@13221655]
++++++++++++++++++++++++++++++++
+Class name: ast.RULE@87aac27
 Variable name: quantifier
-Variable value: ast.QUANTIFIER@1218025c
+Variable value: ast.QUANTIFIER@3e3abc88
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@1218025c
+Class name: ast.QUANTIFIER@3e3abc88
 Variable name: digit
 Variable value: 10
 +++++++++++++++++++++++++++++++
-Class name: ast.QUANTIFIER@1218025c
+Class name: ast.QUANTIFIER@3e3abc88
 Variable name: isExactly
 Variable value: 0
 +++++++++++++++++++++++++++++++
-Class name: ast.KEYWORD@816f27d
+Class name: ast.KEYWORD@6ce253f1
 Variable name: k
-Variable value: ast.DIGITDEF@87aac27
+Variable value: ast.DIGITDEF@53d8d10a
 +++++++++++++++++++++++++++++++
-Class name: ast.TEST@3e3abc88
+Class name: ast.RULE@87aac27
+Variable name: keywords
+Variable value: [ast.KEYWORD@6ce253f1]
++++++++++++++++++++++++++++++++
+Class name: ast.EXPRESSION@19469ea2
+Variable name: rules
+Variable value: [ast.RULE@13221655, ast.RULE@87aac27]
++++++++++++++++++++++++++++++++
+Class name: ast.PROGRAM@5305068a
+Variable name: statements
+Variable value: [ast.EXPRESSION@5e2de80c, ast.TEST@279f2327, ast.EXPRESSION@2ff4acd0, ast.TEST@38af3868, ast.EXPRESSION@77459877, ast.TEST@3af49f1c, ast.EXPRESSION@19469ea2]
++++++++++++++++++++++++++++++++
+Class name: ast.TEST@e9e54c2
 Variable name: name
 Variable value: canadaPhoneNumEx
++++++++++++++++++++++++++++++++
+Class name: ast.TEST@e9e54c2
+Variable name: tests
+Variable value: ["17781234567"]
++++++++++++++++++++++++++++++++
+Class name: ast.TEST@e9e54c2
+Variable name: tests
+Variable value: ["17781234567", "07781234567"]
++++++++++++++++++++++++++++++++
+Class name: ast.TEST@e9e54c2
+Variable name: tests
+Variable value: ["17781234567", "07781234567", "57781234567"]
++++++++++++++++++++++++++++++++
+Class name: ast.PROGRAM@5305068a
+Variable name: statements
+Variable value: [ast.EXPRESSION@5e2de80c, ast.TEST@279f2327, ast.EXPRESSION@2ff4acd0, ast.TEST@38af3868, ast.EXPRESSION@77459877, ast.TEST@3af49f1c, ast.EXPRESSION@19469ea2, ast.TEST@e9e54c2]
 +++++++++++++++++++++++++++++++
