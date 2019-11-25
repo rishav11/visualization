@@ -1,18 +1,16 @@
 <html>
     <head>
         <title> Visualization </title>
-        <script
-             src="https://code.jquery.com/jquery-3.4.1.min.js"
-              integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"></script>
+        
         <script type="text/javascript" src="./sample.js"></script>
+        <script typr="text/javascript" src="../json_converter/output.js"></script>
         <script type="text/javascript" src="./two.js"></script>
         <script type="text/javascript" src="./RandomColor.js"></script>
     </head>
     <body>
 
     <div id="draw-group"> 
-        <p id="demo1"> # of Changes in a variable</p>
+        <p id="demo1"></p>
      <!--/   <p id="demo2"> # of Variables </p>-->
          <script type="text/javascript">
 
@@ -47,26 +45,27 @@ var starColor = getRandomColor();
 
                  // Prints the length of the array that is made up of the changes that a variabe
                  // goes through in another program.
-                 document.getElementById('demo1').innerHTML = numberOfValues[i].length ;
+                 //document.getElementById('demo1').innerHTML = numberOfValues[i].length ;
 
                  var elem = document.getElementById('draw-group');
-                  var two = new Two({ width: 800, height: 250 }).appendTo(elem);
+                  var two = new Two({ width: 900, height: 360 }).appendTo(elem);
 
                   var star1 = two.makeStar(150, 0, 100, 25, numberOfValues[i].length );
                   star1.fill = starColor;
                   star1.stroke = hexToComplimentary(starColor) ;
-                 
-
+                  var variableName = new Two.Text(Object.keys(data[className][instance])[i], 150, 150, starColor)
+                  var variableValue = new Two.Text(Object.values(data[className][instance])[i], 150, 175, starColor)
+ 
                     // Groups can take an array of shapes and/or groups.
-                    var group = two.makeGroup(star1);
+                    var group = two.makeGroup(star1, variableName, variableValue);
 
                  // And have translation, rotation, scale like all shapes.
                  group.translation.set(two.width / 2, two.height / 2);
-                 group.rotation = Math.PI;
-                 group.scale = 0.75;
+                //  group.rotation = Math.PI;
+                 //group.scale = 0.75; 
 
                    // You can also set the same properties a shape have.
-                   group.linewidth = 7;
+                   group.linewidth = 7; 
 
                    two.update();
 
