@@ -1,83 +1,20 @@
 <html>
     <head>
         <title> Visualization </title>
-        
+        <style>
+            h3 {width: 100%; margin-left: 40px}
+            div {display: inline}
+        </style>
         <script type="text/javascript" src="./sample.js"></script>
         <script typr="text/javascript" src="../json_converter/output.js"></script>
         <script type="text/javascript" src="./two.js"></script>
         <script type="text/javascript" src="./RandomColor.js"></script>
+        <script type="text/javascript" src="./app.js"></script>
     </head>
     <body>
-
-    <div id="draw-group"> 
-        <p id="demo1"></p>
      <!--/   <p id="demo2"> # of Variables </p>-->
-         <script type="text/javascript">
-
-// Global variable to keep track of chaning classes.
-var starColor = getRandomColor();
-/* Not needed anymore but keeping it just in case.
-
-         // Gets & Prints the number of variables that there are.
-         document.getElementById('demo2').innerHTML = data["ast.EXPRESSION"]["@2cb4c3ab"] ;
-
-         //Creates an array of the number of variables there are in the js object and prints it on screen.
-         const numberOfVariables = Object.values(data["ast.EXPRESSION"]["@2cb4c3ab"]) ;
-         document.getElementById('demo2').innerHTML = numberOfVariables.length ;
-         
-        */
-
-         // Code for the drawing part of this project.
-             Object.keys(data).forEach(className => {
-                console.log(className + ": " + JSON.stringify(data[className]))
-                Object.keys(data[className]).forEach(instance =>{
-
-            for(var i = 0; i < Object.keys(data[className][instance]).length; i++) {
-
-                 // Gets & prints the data from the sample.js file.
-                 // document.getElementById('demo1').innerHTML = data["ast.EXPRESSION"]["@2cb4c3ab"][i+1] ;
-
-                 // Creates an array of the values inside the js object.
-                 const numberOfValues = Object.values(data[className][instance]) ;
-         
-                 //Prints those values to the console.
-                 console.log(numberOfValues) ;
-
-                 // Prints the length of the array that is made up of the changes that a variabe
-                 // goes through in another program.
-                 //document.getElementById('demo1').innerHTML = numberOfValues[i].length ;
-
-                 var elem = document.getElementById('draw-group');
-                  var two = new Two({ width: 900, height: 360 }).appendTo(elem);
-
-                  var star1 = two.makeStar(150, 0, 100, 25, numberOfValues[i].length );
-                  star1.fill = starColor;
-                  star1.stroke = hexToComplimentary(starColor) ;
-                  var variableName = new Two.Text(Object.keys(data[className][instance])[i], 150, 150, starColor)
-                  var variableValue = new Two.Text(Object.values(data[className][instance])[i], 150, 175, starColor)
- 
-                    // Groups can take an array of shapes and/or groups.
-                    var group = two.makeGroup(star1, variableName, variableValue);
-
-                 // And have translation, rotation, scale like all shapes.
-                 group.translation.set(two.width / 2, two.height / 2);
-                //  group.rotation = Math.PI;
-                 //group.scale = 0.75; 
-
-                   // You can also set the same properties a shape have.
-                   group.linewidth = 7; 
-
-                   two.update();
-
-                   //Star 2
-                   //var star2 = two.makeStar(-150, 0, 100, 50, 7);
-                   // star2.fill = 'rgba(0, 200, 255, 0.75)';
-                   //star2.noStroke();
-                }
-            });
-            starColor = getRandomColor(); 
-             });
-           </script>
-        </div>
+         <p style="text-align: center">This visualization is constrained to Java programs only. Our visualization would show an x-pointed circle/star, where x represents the number of changes that a variable has gone through. Global variables belonging to the same class will be distinguished by being the same color.</p>
+     <h2 style="border-style: none none solid none; border-width: 2px; padding-bottom: 4px">SuperRex DSL Visualization</h2>
+     <script type="text/javascript" src="./app.js"></script>
     </body>
 </html>

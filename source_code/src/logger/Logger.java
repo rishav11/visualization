@@ -1,7 +1,4 @@
-package logger;
-import logger.Logger;
-
-import javafx.beans.value.ObservableValue;
+package src.logger;
 
 import javax.swing.event.ChangeListener;
 import java.io.*;
