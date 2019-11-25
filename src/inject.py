@@ -4,9 +4,9 @@ from os import walk
 from os import path
 import re
 
-for (root, dirs, files) in walk("../source_code/src/"):
+for (root, dirs, files) in walk("../source_code/src/ast"):
     for filename in files:
-        if filename.endswith("QUANTIFIER.java"):
+        if filename.endswith(".java"):
             javaFile = path.join(root, filename)
             f = open(javaFile, "r")
             data = f.readlines()
@@ -16,6 +16,8 @@ for (root, dirs, files) in walk("../source_code/src/"):
             inCommentBlock = False
             inGlobalVariableSection = False
             globalVariables = []
+            inStaticMethod = False
+            staticMethodStack = []
 
             for i, line in enumerate(data):
                 if isLoggerLineAdded is False:
@@ -36,8 +38,21 @@ for (root, dirs, files) in walk("../source_code/src/"):
                     if gv:
                         globalVariables.append(gv.group(1))
 
+                if inStaticMethod is False:
+                    if line.find("static") >= 0:
+                        inStaticMethod = True
+                    if line.find("{") >= 0:
+                        staticMethodStack.append("{")
+                else:
+                    if line.find("{") >= 0:
+                        staticMethodStack.append("{")
+                    if line.find("}") >= 0:
+                        staticMethodStack.pop()
+                    if len(staticMethodStack) == 0:
+                        inStaticMethod = False
+
                 for gv in globalVariables:
-                    if re.search("^\s*(" + gv + ")+\s*=.*$", line):
+                    if re.search("^\s*(" + gv + ")+\s*=.*$", line) and not inStaticMethod:
                         data.insert(i+1, "Logger.logTwo(this, \"" + gv + "\");\n")
 
             f = open(javaFile, "w")

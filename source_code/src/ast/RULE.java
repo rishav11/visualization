@@ -1,4 +1,5 @@
 package ast;
+import logger.Logger;
 
 import java.util.ArrayList;
 
@@ -13,9 +14,11 @@ public class RULE extends STATEMENT {
         // check if it has anchor, if yes
         if (!tokenizer.checkToken("[0-9]+")) {
             anchor = new ANCHOR();
+Logger.logTwo(this, "anchor");
             anchor.parse();
         }
         quantifier = new QUANTIFIER();
+Logger.logTwo(this, "quantifier");
         quantifier.parse();
         tokenizer.getAndCheckNext(":");
         while (!tokenizer.checkToken(",")) {
