@@ -4,7 +4,7 @@ from os import walk
 from os import path
 import re
 
-for (root, dirs, files) in walk("../source_code/src/ast"):
+for (root, dirs, files) in walk("../source_code/src/"):
     for filename in files:
         if filename.endswith(".java"):
             javaFile = path.join(root, filename)
@@ -53,7 +53,7 @@ for (root, dirs, files) in walk("../source_code/src/ast"):
 
                 for gv in globalVariables:
                     if re.search("^\s*(" + gv + ")\s*(=|\.add|\.put|\+\+|\-\-|\.append).*$", line) and not inStaticMethod:
-                        data.insert(i+1, "Logger.logTwo(this, \"" + gv + "\");\n")
+                        data.insert(i+1, "Logger.log(this, \"" + gv + "\");\n")
 
             f = open(javaFile, "w")
             for line in data:

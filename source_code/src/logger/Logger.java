@@ -1,4 +1,5 @@
 package logger;
+import logger.Logger;
 
 import javafx.beans.value.ObservableValue;
 
@@ -35,32 +36,7 @@ public class Logger {
         }
     }
 
-    private static boolean isChangedVar(Object reflectionVar, Object realVar) {
-        ArrayList<?> list;
-        if (reflectionVar instanceof ArrayList<?>) {
-            list = (ArrayList<?>) reflectionVar;
-            return list.contains(realVar);
-        }
-        return (reflectionVar.equals(realVar));
-    }
-
-    public static void log(Object obj, Object var){
-        for(Field field : obj.getClass().getDeclaredFields()){
-            field.setAccessible(true);
-            try {
-                if (isChangedVar(field.get(obj), var)) {
-                    write("Class name: " + obj + "\n");
-                    write("Variable name: " + field.getName() + "\n");
-                    write("Variable value: " + var + "\n");
-                    write("+++++++++++++++++++++++++++++++\n");
-                };
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public static void logTwo(Object obj, String varName){
+    public static void log(Object obj, String varName){
         try {
             Field field = obj.getClass().getDeclaredField(varName);
             field.setAccessible(true);
