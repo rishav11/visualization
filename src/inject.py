@@ -31,7 +31,7 @@ for (root, dirs, files) in walk("../source_code/src/ast"):
                 elif line.find("class") >= 0:
                     if not inGlobalVariableSection is None:
                         inGlobalVariableSection = True
-                elif line.find("@") >= 0 or line.find("{") >= 0 or line.find("(") >= 0:
+                elif line.find("@") >= 0 or line.find("{") >= 0:
                     inGlobalVariableSection = None
                 elif inGlobalVariableSection:
                     gv = re.match(".*\s+(\w+)\s*[;=].*", line)
@@ -52,7 +52,7 @@ for (root, dirs, files) in walk("../source_code/src/ast"):
                         inStaticMethod = False
 
                 for gv in globalVariables:
-                    if re.search("^\s*(" + gv + ")+\s*=.*$", line) and not inStaticMethod:
+                    if re.search("^\s*(" + gv + ")\s*(=|\.add|\.put|\+\+|\-\-|\.append).*$", line) and not inStaticMethod:
                         data.insert(i+1, "Logger.logTwo(this, \"" + gv + "\");\n")
 
             f = open(javaFile, "w")

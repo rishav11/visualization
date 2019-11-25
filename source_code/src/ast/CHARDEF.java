@@ -1,5 +1,4 @@
 package ast;
-import logger.Logger;
 
 public class CHARDEF extends KEYWORD {
     private CHARCONSTRAINT c;
@@ -9,7 +8,6 @@ public class CHARDEF extends KEYWORD {
         tokenizer.getAndCheckNext("character");
         if (tokenizer.checkToken("from")) {
             c = new CHARCONSTRAINT();
-Logger.logTwo(this, "c");
             c.parse();
         }
     }
