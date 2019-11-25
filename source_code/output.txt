@@ -1,10 +1,20 @@
-postalCodeEx: ^([a-zA-Z])([0-9])([a-zA-Z])(\s)([0-9])([a-zA-Z])([0-9])$
+postalCodeEx: ^([a-zA-Z])([0-9])([a-zA-Z])(\w)([0-9])([a-zA-Z])([0-9])$
 **********TESTS FOR postalCodeEx**********
-FOUND MATCH: "V5X 1A6"
-FOUND MATCH: "V3R 0G5"
-FOUND MATCH: "I5J 6K7"
-urlCodeEx: ^(www)(\.)([a-zA-Z])+(\.)(com)
+NO MATCH FOUND: "V5X 1A6"
+NO MATCH FOUND: "V3R 0G5"
+NO MATCH FOUND: "I5J 6K7"
+urlCodeEx: ^(w){3}(\.)([a-zA-Z])+(\.)(com)
 **********TESTS FOR urlCodeEx**********
 FOUND MATCH: "www.google.com"
 FOUND MATCH: "www.facebook.com"
 FOUND MATCH: "www.youtube.com"
+phoneNumEx: ([0-9]){10,11}
+**********TESTS FOR phoneNumEx**********
+FOUND MATCH: "7781234567"
+FOUND MATCH: "17781234567"
+NO MATCH FOUND: "1"
+canadaPhoneNumEx: ^([1-5])([0-9]){10}
+**********TESTS FOR canadaPhoneNumEx**********
+FOUND MATCH: "17781234567"
+NO MATCH FOUND: "07781234567"
+FOUND MATCH: "57781234567"

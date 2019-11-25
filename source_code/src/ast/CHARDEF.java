@@ -1,12 +1,15 @@
 package ast;
+import logger.Logger;
 
 public class CHARDEF extends KEYWORD {
     private CHARCONSTRAINT c;
+
     @Override
-    public void parse(){
+    public void parse() {
         tokenizer.getAndCheckNext("character");
         if (tokenizer.checkToken("from")) {
             c = new CHARCONSTRAINT();
+Logger.logTwo(this, "c");
             c.parse();
         }
     }

@@ -1,5 +1,4 @@
 package ast;
-
 import logger.Logger;
 
 public class ANCHOR extends STATEMENT {
@@ -7,11 +6,9 @@ public class ANCHOR extends STATEMENT {
     private String anchor;
 
     @Override
-    public void parse(){
+    public void parse() {
         anchor = tokenizer.getNext();
-        Logger.AccessFieldsUsingReflection(this);
-        anchor = anchor;
-        Logger.AccessFieldsUsingReflection(this);
+Logger.logTwo(this, "anchor");
     }
 
     @Override

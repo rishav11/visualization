@@ -1,4 +1,5 @@
 package ast;
+import logger.Logger;
 
 import libs.Node;
 
@@ -23,22 +24,22 @@ public class PROGRAM extends Node {
         }
     }
 
-    public void nameCheck(){
-        for (STATEMENT s : statements){
+    public void nameCheck() {
+        for (STATEMENT s : statements) {
             s.nameCheck();
         }
     }
 
     @Override
     public void typeCheck() {
-        for (STATEMENT s : statements){
+        for (STATEMENT s : statements) {
             s.typeCheck();
         }
     }
 
     @Override
     public String evaluate() {
-        for (STATEMENT s : statements){
+        for (STATEMENT s : statements) {
             s.evaluate();
         }
         return "";

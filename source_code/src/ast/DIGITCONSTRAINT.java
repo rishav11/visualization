@@ -1,4 +1,5 @@
 package ast;
+import logger.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +8,7 @@ public class DIGITCONSTRAINT extends DIGITDEF {
     private List<Integer> digits = new ArrayList<>();
 
     @Override
-    public void parse(){
+    public void parse() {
         tokenizer.getAndCheckNext("from");
         digits.add(Integer.parseInt(tokenizer.getNext()));
         tokenizer.getAndCheckNext("to");
@@ -34,9 +35,9 @@ public class DIGITCONSTRAINT extends DIGITDEF {
     public String evaluate() {
         String output = "";
 
-        for (int i=0; i<digits.size(); i++) {
+        for (int i = 0; i < digits.size(); i++) {
             output += (digits.get(i));
-            if (i%2 == 0) {
+            if (i % 2 == 0) {
                 output += ("-");
             }
         }

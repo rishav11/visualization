@@ -2,6 +2,10 @@
 .idea/tasks.xml
 .vscode
 
+source_code/.idea
+json_converter/env
+json_converter/.idea
+
 # OS generated files #
 ######################
 .DS_Store

@@ -1,18 +1,22 @@
 package logger;
 
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
+import javafx.beans.value.ObservableValue;
+
+import javax.swing.event.ChangeListener;
+import java.io.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Logger {
 
-    static protected PrintWriter writer;
+    protected static PrintWriter writer;
 
     static {
         try {
-            writer = new PrintWriter("test.txt", "UTF-8");
+            writer = new PrintWriter("variables_log.txt", "UTF-8");
+            writer.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
@@ -20,47 +24,54 @@ public class Logger {
         }
     }
 
-    public static void closeWriter(){
-        writer.close();
+
+    private static void write(String text) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("variables_log.txt", true));
+            writer.write(text);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public static void log(String text) {
-        writer.print(text);
+    private static boolean isChangedVar(Object reflectionVar, Object realVar) {
+        ArrayList<?> list;
+        if (reflectionVar instanceof ArrayList<?>) {
+            list = (ArrayList<?>) reflectionVar;
+            return list.contains(realVar);
+        }
+        return (reflectionVar.equals(realVar));
     }
 
-    /**
-     * Access fields of Object using Reflection.
-     * @param obj
-     */
-    public static void AccessFieldsUsingReflection(Object obj){
-        /* Get array of fields declared in Class */
-        Field[] fields = obj.getClass().getDeclaredFields();
-        /* Loop through all fields */
-        for(int i = 0; i < fields.length ; i++){
-            /* Get field name */
-            String fieldName = fields[i].getName();
-            /* Get generic/base type of field (int, short, long, String, etc...) */
-            Object fieldType = fields[i].getGenericType();
-
-            log("Class name: " + obj + "\n");
-            log("Field(variable) name: " + fieldName + "\n");
-            log("Generic Type: " + fieldType + "\n");
-
-            /* Set<E>, List<E> and Map<K,V> are ParameterizedType */
-            if(fieldType instanceof ParameterizedType){
-                /**
-                 * This will give you Actual Type of Set<E>, List<E> and Map<K,V>.
-                 * Example:
-                 * List<String> -> String is ActualType
-                 * Set<Integer> -> Integer is ActualType
-                 * Map<String, Long> -> String, Long is ActualType
-                 */
-                System.out.println("Actual Type:");
-                for(Object objActualType : ((ParameterizedType) fieldType).getActualTypeArguments()){
-                    log("-- "+objActualType + "\n");
-                }
+    public static void log(Object obj, Object var){
+        for(Field field : obj.getClass().getDeclaredFields()){
+            field.setAccessible(true);
+            try {
+                if (isChangedVar(field.get(obj), var)) {
+                    write("Class name: " + obj + "\n");
+                    write("Variable name: " + field.getName() + "\n");
+                    write("Variable value: " + var + "\n");
+                    write("+++++++++++++++++++++++++++++++\n");
+                };
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
             }
-            log("+++++++++++++++++++++++++++++++\n");
+        }
+    }
+
+    public static void logTwo(Object obj, String varName){
+        try {
+            Field field = obj.getClass().getDeclaredField(varName);
+            field.setAccessible(true);
+            write("Class name: " + obj + "\n");
+            write("Variable name: " + field.getName() + "\n");
+            write("Variable value: " + field.get(obj) + "\n");
+            write("+++++++++++++++++++++++++++++++\n");
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
         }
     }
 }

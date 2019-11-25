@@ -1,12 +1,15 @@
 package ast;
+import logger.Logger;
 
 public class DIGITDEF extends KEYWORD {
     private DIGITCONSTRAINT d;
+
     @Override
-    public void parse(){
+    public void parse() {
         tokenizer.getAndCheckNext("digit");
         if (tokenizer.checkToken("from")) {
             d = new DIGITCONSTRAINT();
+Logger.logTwo(this, "d");
             d.parse();
         }
     }

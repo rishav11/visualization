@@ -1,11 +1,13 @@
 package ast;
+import logger.Logger;
 
 public class STRINGDEF extends KEYWORD {
     private String str;
 
     @Override
-    public void parse(){
+    public void parse() {
         str = tokenizer.getNext();
+Logger.logTwo(this, "str");
     }
 
     @Override
@@ -25,7 +27,7 @@ public class STRINGDEF extends KEYWORD {
         } else if (str.equals("non-digit")) {
             return "\\D";
         } else if (str.equals("whitespace")) {
-            return "\\s";
+            return "\\w";
         } else if (str.equals("non-whitespace")) {
             return "\\S";
         } else if (str.equals("newline")) {

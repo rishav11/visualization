@@ -3,7 +3,6 @@ package ui;
 import ast.PROGRAM;
 import libs.Node;
 import libs.Tokenizer;
-import logger.Logger;
 
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
@@ -44,7 +43,6 @@ public class Main {
         // program.typeCheck();
         program.evaluate();
         Node.closeWriter();
-        Logger.closeWriter();
     }
 
 }
