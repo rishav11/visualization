@@ -1,15 +1,12 @@
 package ast;
 
-import logger.Logger;
-
 public class ANCHOR extends STATEMENT {
 
     private String anchor;
 
     @Override
-    public void parse(){
+    public void parse() {
         anchor = tokenizer.getNext();
-        Logger.logTwo(this, "anchor");
     }
 
     @Override

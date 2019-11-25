@@ -2,8 +2,9 @@ package ast;
 
 public class CHARDEF extends KEYWORD {
     private CHARCONSTRAINT c;
+
     @Override
-    public void parse(){
+    public void parse() {
         tokenizer.getAndCheckNext("character");
         if (tokenizer.checkToken("from")) {
             c = new CHARCONSTRAINT();

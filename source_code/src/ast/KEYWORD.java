@@ -1,24 +1,17 @@
 package ast;
 
-import logger.Logger;
-
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class KEYWORD extends STATEMENT {
     private KEYWORD k;
-    private String loggerString;
 
     @Override
-    public void parse(){
-
+    public void parse() {
         if (tokenizer.checkToken("character")) {
             k = new CHARDEF();
-            //loggerString = tokenizer.checkNext();
         } else if (tokenizer.checkToken("digit")) {
             k = new DIGITDEF();
-            //loggerString = tokenizer.checkNext();
         } else if (tokenizer.checkToken("(\"([^\"])*\")")) {
             k = new STRINGDEF();
         } else if (tokenizer.checkToken("any")) {
@@ -34,11 +27,7 @@ public class KEYWORD extends STATEMENT {
         } else if (tokenizer.checkToken("tab")) {
             k = new STRINGDEF();
         }
-        loggerString = tokenizer.checkNext();
-        Logger.log(this, loggerString);
         k.parse();
-
-
     }
 
     @Override

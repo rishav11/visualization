@@ -9,7 +9,7 @@ public class RULE extends STATEMENT {
     private ArrayList<KEYWORD> keywords = new ArrayList<>();
 
     @Override
-    public void parse(){
+    public void parse() {
         // check if it has anchor, if yes
         if (!tokenizer.checkToken("[0-9]+")) {
             anchor = new ANCHOR();
@@ -19,7 +19,8 @@ public class RULE extends STATEMENT {
         quantifier.parse();
         tokenizer.getAndCheckNext(":");
         while (!tokenizer.checkToken(",")) {
-            if (tokenizer.checkToken("\\}")) break;
+            if (tokenizer.checkToken("\\}"))
+                break;
             if (!tokenizer.checkToken("or")) {
                 KEYWORD keyword = new KEYWORD();
                 keyword.parse();
@@ -54,9 +55,9 @@ public class RULE extends STATEMENT {
         }
 
         output += "(";
-        for (int i=0; i<keywords.size(); i++) {
+        for (int i = 0; i < keywords.size(); i++) {
             output += keywords.get(i).evaluate();
-            if (i+1<keywords.size()) {
+            if (i + 1 < keywords.size()) {
                 output += "|";
             }
         }

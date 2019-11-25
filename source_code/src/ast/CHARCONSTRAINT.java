@@ -1,39 +1,23 @@
 package ast;
 
-import logger.Logger;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class CHARCONSTRAINT extends CHARDEF {
     private List<String> chars = new ArrayList<>();
-    private String loggerString;
 
     @Override
-    public void parse(){
+    public void parse() {
         tokenizer.getAndCheckNext("from");
-        String firstCharConstraint = tokenizer.getNext();
-        chars.add(firstCharConstraint);
-        loggerString = "from" + firstCharConstraint;
-
+        chars.add(tokenizer.getNext());
         tokenizer.getAndCheckNext("to");
-        String secondCharConstraint = tokenizer.getNext();
-        chars.add(secondCharConstraint);
-        loggerString = loggerString.concat("to" + secondCharConstraint);
-
+        chars.add(tokenizer.getNext());
         while (tokenizer.checkToken("and")) {
             tokenizer.getAndCheckNext("and");
-            String xCharConstraint = tokenizer.getNext();
-            chars.add(xCharConstraint);
-            loggerString = loggerString.concat("and" + xCharConstraint);
-
+            chars.add(tokenizer.getNext());
             tokenizer.getAndCheckNext("to");
-            String yCharConstraint = tokenizer.getNext();
-            chars.add(yCharConstraint);
-            loggerString = loggerString.concat("to" + yCharConstraint);
+            chars.add(tokenizer.getNext());
         }
-
-        Logger.log(this, loggerString);
     }
 
     @Override
@@ -50,9 +34,9 @@ public class CHARCONSTRAINT extends CHARDEF {
     public String evaluate() {
         String output = "";
 
-        for (int i=0; i<chars.size(); i++) {
+        for (int i = 0; i < chars.size(); i++) {
             output += chars.get(i);
-            if (i%2 == 0) {
+            if (i % 2 == 0) {
                 output += "-";
             }
         }
