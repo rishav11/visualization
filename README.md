@@ -75,14 +75,15 @@ python converter_beta.py
 ## User Testing
 ### Prototype Testing
 Our original design.
-* Insert drawing
+
+<img src="/images/vis_prototype.png" alt="Vis Prototype"/>
 
 Results of prototype testing.
-* User 1 did not think it was helpful because it only showed the name of the variable and the number of times it was being changes. Suggestion was to somehow include the values of the variable.
+* User 1 did not think it was helpful because it only showed the name of the variable and the number of times it was being changed. Suggestion was to somehow include the values of the variable.
 
 ### End-User Testing
 Our final design.
-* Insert screenshot
+* Insert drawing
 
 Results of end-user testing
 * User 1...
