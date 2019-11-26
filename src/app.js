@@ -49,7 +49,7 @@ Object.keys(data).forEach(className => {
             star.fill = starColor;
             star.stroke = hexToComplimentary(starColor) ;
             var variableName = new Two.Text(Object.keys(data[className][instance])[i], 0, 70, starColor);
-            var changeText = "Value changed " +  numberOfValues[i].length + " times";
+            var changeText = "Value changed " +  numberOfValues[i].length + (numberOfValues[i].length > 1 ? " times" : " time");
             var variableValueChange = new Two.Text(changeText, 0, 90, starColor);
             // Groups can take an array of shapes and/or groups.
             var group = two.makeGroup(star, variableName, variableValueChange);
