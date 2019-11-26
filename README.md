@@ -40,12 +40,13 @@ cd analysis
 python inject.py
 ```
 3. Run your Java program as you normally would. The logger lines that were injected in step 2 will print all neccessary data to `variables_log.txt`.
-4. Once the Java program has stopped running, run:
+4. Once the Java program has stopped running, open `json_converter/converter_beta.py` and change `../source_code/variables_log.txt` on `line 8` to point to the `variables_log.txt` file in your Java program.
+5. Run:
 ```bash
 cd json_converter
 python converter_beta.py
 ```
-5. Open `src/Interface.HTML` in your web browser to see the visualization.
+6. Open `src/Interface.HTML` in your web browser to see the visualization.
 
 <!-- CONTRIBUTORS -->
 ## Contributors
@@ -59,16 +60,18 @@ python converter_beta.py
 * Manually added logger lines to sample source code and tested Logger class
 * Wrote python script to parse variables_log.txt and turn it into a json object
 * Helped perform user studies
+* Put together video
 
 ### Rishav
 * Loaded json object into javascript and looped through object to draw stars for each global variable
 * Made stars different colours based on their class
+* Styling of stars and visualization layout
 * Helped perform user studies
 
 ### Ann
 * Looped through json object to group stars by class
 * Created tooltip to display values of variables on hover
-* Styled and animated stars, groups and text to make it easy to read and understand
+* Animated stars and styled groups and text to make it easy to read and understand
 * Helped perform user studies
 
 <!-- USER TESTING -->
@@ -81,22 +84,24 @@ Questions asked:
 ### Prototype Testing
 Our original design.
 
-<img src="/images/vis_prototype.png" alt="Vis Prototype"/>
+![Vis Prototype](/images/vis_prototype.png)
 
 Results of prototype testing.
 * User 1 was able to answer questions 1 and 2 (question 3 was not asked), however they did not think the visualization was helpful because it only showed the name of the variable and the number of times it was being changed. Suggestion was to somehow include the values of the variable.
 
 ### End-User Testing
 #### Test 1
-Intermediate design
-* Insert drawing
+Intermediate design.
+
+![Animation Loop](/images/animation_loop.gif)
 
 Results of end-user test 1
 * User 2 was able to answer all 3 questions correctly, however the they thought that the looping animation of the stars was distracting and did not add any additional value.
 
 #### Test 2
-Final design
-* Insert drawing
+Final design.
+
+![Final Design](/images/vis_screenshot.png)
 
 Results of end-user test 2
 * User 3 was able to answer all 3 questions correctly. We kept the animation, but we got rid of the looping and stopped the animation after it was done playing once.
