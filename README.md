@@ -1,10 +1,7 @@
-<br />
 <p align="center">
-  <img src="/src/logo.png" width="150px" height="150px" alt="Vistar Logo" style="text-align: center">
+  <img src="/src/logo.png" width="150px" height="150px" alt="Vistar Logo" style="text-align: center"/>
   <h3 align="center">Vistar</h3>
-
-  <p align="center">
-    A visualization tool for Java programs that visualizes the number of global variable changes as stars.
+  <p align="center">A visualization tool for Java programs that visualizes the number of global variable changes as stars.</p>
 </p>
 
 <!-- ABOUT THE PROJECT -->
@@ -55,7 +52,7 @@ python converter_beta.py
 
 ### Viniel
 * Created Logger class which gets class names, class instances, global variables and their values and writes it to variables_log.txt
-* Wrote python script to inject logger lines into Java files at lines where a global variable is changed
+* Wrote python script to copy logger class to source directory and inject logger lines into Java files at lines where a global variable is changed
 * Helped perform user studies
 
 ### Ze
@@ -71,7 +68,7 @@ python converter_beta.py
 ### Ann
 * Looped through json object to group stars by class
 * Created tooltip to display values of variables on hover
-* Styled stars, groups and text to make it easy to read and understand
+* Styled and animated stars, groups and text to make it easy to read and understand
 * Helped perform user studies
 
 <!-- USER TESTING -->
