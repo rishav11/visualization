@@ -1,5 +1,6 @@
 <br />
 <p align="center">
+  <img src="/src/logo.png" width="150px" height="150px" alt="Vistar Logo" style="text-align: center">
   <h3 align="center">Vistar</h3>
 
   <p align="center">
