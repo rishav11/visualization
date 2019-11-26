@@ -1,0 +1,66 @@
+  h3 {width: 100%; margin-left: 40px}
+            div {display: inline-block; margin: 10px}
+
+            /* Tooltip text */
+            .tooltiptext {
+                visibility: hidden;
+                text-align: center;
+                padding: 5px;
+                position:absolute;
+                background-color: beige;
+                color: black;
+            }
+
+            .tooltip:hover .tooltiptext {
+                visibility: visible;
+                z-index: 100;
+            }
+
+            h1, h2, p, h3 {
+               color: black;
+               font-family: 'Open Sans';
+               font-size: 110%;
+            }
+
+            h1, h2, h3 {
+                color: #610966;
+            }
+
+            body {
+                padding: 0 40px;
+            }
+
+            h3 {
+                margin: 20px 25% 0;
+                width: 50%;
+                font-size: 2em;
+                align-content: center;
+                text-align: center;
+                border-bottom: 2px dashed #610966;
+                padding: 10px;
+            }
+
+            #app {
+                padding: 0 5%;
+                margin: auto;
+                text-align: center;
+            }
+
+            img {
+                padding-top: 12px;
+            }
+
+            #title {
+                font-size:90px; 
+                color:#1a1a1a; 
+                margin-bottom: 20px; 
+                text-align:left
+            }
+
+            #desc, #desc-header {
+                text-align:left;
+            }
+
+            #desc-header {
+                color: #610966;
+            }

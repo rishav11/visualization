@@ -17,8 +17,9 @@ Object.keys(data).forEach(className => {
     h3.innerHTML = className;
     div = document.createElement("div");
     div.id = className;
-    document.body.appendChild(h3);
-    document.body.append(div);
+    app = document.getElementById('app');
+    app.appendChild(h3);
+    app.append(div);
     Object.keys(data[className]).forEach(instance =>{
         for(var i = 0; i < Object.keys(data[className][instance]).length; i++) {
             // Gets & prints the data from the sample.js file.
@@ -48,10 +49,13 @@ Object.keys(data).forEach(className => {
             var star = two.makeStar(0, 0, 55, 15, numberOfValues[i].length );
             star.fill = starColor;
             star.stroke = hexToComplimentary(starColor) ;
-            var variableName = new Two.Text(Object.keys(data[className][instance])[i], 0, 70, starColor);
+            var variableName = new Two.Text(instance + " : " + Object.keys(data[className][instance])[i], 0, 70, starColor);
             var changedTimes = numberOfValues[i].length;
             var changeText = "Value changed " +  numberOfValues[i].length + (numberOfValues[i].length > 1 ? " times" : " time");
-            var variableValueChange = new Two.Text(changeText, 0, 90, starColor);
+            var variableValueChange = new Two.Text(changeText, 0, 90, "");
+            variableName.weight = '700';
+            variableName.family = 'Open Sans';
+            variableValueChange.family = 'Open Sans';
             // Groups can take an array of shapes and/or groups.
             var group = two.makeGroup(star, variableName, variableValueChange);
             // And have translation, rotation, scale like all shapes.
@@ -60,12 +64,12 @@ Object.keys(data).forEach(className => {
 
             // You can also set the same properties a shape have.
             group.linewidth = 4;
+            
             if (changedTimes > 1) {
                 star.sides = 0;
                 two.bind('update', function (frameCount) {
                     // This code is called everytime two.update() is called.
                     // Effectively 60 times per second.
-
                     if (star.scale > 0.9999) {
                         star.scale = star.rotation = 0;
                     }
@@ -74,8 +78,8 @@ Object.keys(data).forEach(className => {
                         star.sides = 0;
                     }
                     if (star.sides + t > changedTimes) {
-                        star.sides = changedTimes;
-                        t = 0;
+                        star.sides -= t;
+                        // t = 0;
                     }
                     star.scale += t;
                     star.sides += t;

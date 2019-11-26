@@ -1,26 +1,9 @@
 <html>
     <head>
         <title> Visualization </title>
-        <style>
-            h3 {width: 100%; margin-left: 40px}
-            div {display: inline-block; margin: 10px}
-
-            /* Tooltip text */
-            .tooltiptext {
-                visibility: hidden;
-                text-align: center;
-                padding: 5px;
-                position:absolute;
-                background-color: beige;
-                color: black;
-            }
-
-            .tooltip:hover .tooltiptext {
-                visibility: visible;
-                z-index: 100;
-            }
-
-        </style>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        
         <script type="text/javascript" src="./sample.js"></script>
         <script typr="text/javascript" src="../json_converter/output.js"></script>
         <script type="text/javascript" src="./two.js"></script>
@@ -30,14 +13,17 @@
     <body>
      <!--/   <p id="demo2"> # of Variables </p>-->
      <img src= "./logo.png" alt="logo" width="100" height="100" align="left">
-        <h1 style="font-size:90px; color:darkgoldenrod; text-align:left">Vistar</h1>
-        <h2 style="color:#787878; text-align:left">A Variable Visualization Tool</h2>
-         <p style="text-align: left">This visualization is constrained to Java programs only. Our visualization would show an x-pointed star, where x represents the number of changes that a variable has gone through during runtime. Global variables belonging to the same class will be distinguished by being the same color. Hovering over a star will show the values that the variable held over the course of the program. </p>
+        <h1 id="title">Vistar</h1>
+        <h2 id="desc-header">A Variable Visualization Tool</h2>
+         <p id="desc">This visualization is constrained to Java programs only. Our visualization would show an x-pointed star, where x represents the number of changes that a variable has gone through during runtime. Global variables belonging to the same class will be distinguished by being the same color. Hovering over a star will show the values that the variable held over the course of the program. </p>
 
          <!--<p style="text-align: center">This visualization is constrained to Java programs only.</p>-->
      <!--<p style="text-align: center">Our visualization would show an x-pointed circle/star, where x represents the number of changes that a variable has gone through.</p>-->
      <!--<p style="text-align: center">Global variables belonging to the same class will be distinguished by being the same color.</p>-->
-     <h2 style="border-style: none none solid none; border-width: 2px; padding-bottom: 4px">SuperRex DSL Visualization</h2>
-     <script type="text/javascript" src="./app.js"></script>
+     <h2 id="dsl">SuperRex DSL Visualization</h2>
+     <hr>
+     <div id="app">
+         <script type="text/javascript" src="./app.js"></script>
+     </div>
     </body>
 </html>
