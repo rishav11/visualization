@@ -73,17 +73,30 @@ python converter_beta.py
 
 <!-- USER TESTING -->
 ## User Testing
+Questions asked:
+1. Which variable changed the most number of times?
+2. Which class did the most changed variable belong to?
+3. What values did the most changed variable have?
+
 ### Prototype Testing
 Our original design.
 
 <img src="/images/vis_prototype.png" alt="Vis Prototype"/>
 
 Results of prototype testing.
-* User 1 did not think it was helpful because it only showed the name of the variable and the number of times it was being changed. Suggestion was to somehow include the values of the variable.
+* User 1 was able to answer questions 1 and 2 (question 3 was not asked), however they did not think the visualization was helpful because it only showed the name of the variable and the number of times it was being changed. Suggestion was to somehow include the values of the variable.
 
 ### End-User Testing
-Our final design.
+#### Test 1
+Intermediate design
 * Insert drawing
 
-Results of end-user testing
-* User 1...
+Results of end-user test 1
+* User 2 was able to answer all 3 questions correctly, however the they thought that the looping animation of the stars was distracting and did not add any additional value.
+
+#### Test 2
+Final design
+* Insert drawing
+
+Results of end-user test 2
+* User 3 was able to answer all 3 questions correctly. We kept the animation, but we got rid of the looping and stopped the animation after it was done playing once.
