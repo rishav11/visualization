@@ -40,7 +40,11 @@ Object.keys(data).forEach(className => {
             tooltipText = document.createElement("span");
             tooltip.setAttribute("class", "tooltip" );
             tooltipText.setAttribute("class", "tooltiptext" );
-            var variableValue = Object.values(data[className][instance])[i];
+            var variableValue = '<p style="text-decoration: underline; font-size: 14px">Values</p>';
+            Object.values(data[className][instance])[i].forEach( (val, i) => {
+                num = i+1;
+                variableValue += '<p style="font-size: 14px">' + val + '</p>';
+            });
             tooltipText.innerHTML = variableValue;
             elem.append(tooltip);
             tooltip.appendChild(tooltipText);
