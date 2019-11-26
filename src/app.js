@@ -45,12 +45,12 @@ Object.keys(data).forEach(className => {
             tooltip.appendChild(tooltipText);
 
             var two = new Two({ width: 200, height: 200 }).appendTo(tooltip);
-            var star = two.makeStar(0, 0, 40, 10, numberOfValues[i].length );
+            var star = two.makeStar(0, 0, 55, 15, numberOfValues[i].length );
             star.fill = starColor;
             star.stroke = hexToComplimentary(starColor) ;
-            var variableName = new Two.Text(Object.keys(data[className][instance])[i], 0, 60, starColor);
+            var variableName = new Two.Text(Object.keys(data[className][instance])[i], 0, 70, starColor);
             var changeText = "Value changed " +  numberOfValues[i].length + " times";
-            var variableValueChange = new Two.Text(changeText, 0, 80, starColor);
+            var variableValueChange = new Two.Text(changeText, 0, 90, starColor);
             // Groups can take an array of shapes and/or groups.
             var group = two.makeGroup(star, variableName, variableValueChange);
             // And have translation, rotation, scale like all shapes.
@@ -59,7 +59,7 @@ Object.keys(data).forEach(className => {
             //group.scale = 0.75;
 
             // You can also set the same properties a shape have.
-            group.linewidth = 7;
+            group.linewidth = 4;
 
             two.update();
         }
