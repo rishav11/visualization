@@ -35,15 +35,17 @@ Make sure you have python installed.
 
 ### Making the Visualization
 
-1. Open `src/inject.py` and change `../source_code/src/` on `line 7` to point to the source folder of your Java program. This currently points to a sample Java program located in the repo.
+1. Open `analysis/inject.py` and change `../source_code/src/` on `line 9` to point to the source folder of your Java program. This currently points to a sample Java program located in the repo.
 2. Run:
 ```bash
-python src/inject.py
+cd analysis
+python inject.py
 ```
 3. Run your Java program as you normally would. The logger lines that were injected in step 2 will print all neccessary data to `variables_log.txt`.
 4. Once the Java program has stopped running, run:
 ```bash
-python json_converter/converter_beta.py
+cd json_converter
+python converter_beta.py
 ```
 5. Open `src/Interface.HTML` in your web browser to see the visualization.
 

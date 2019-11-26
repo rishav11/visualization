@@ -2,9 +2,13 @@
 
 from os import walk
 from os import path
+from os import mkdir
+from shutil import copyfile
 import re
 
-for (root, dirs, files) in walk("../source_code/src/"):
+src_directory = "../source_code/src/"
+
+for (root, dirs, files) in walk(src_directory):
     for filename in files:
         if filename.endswith(".java"):
             javaFile = path.join(root, filename)
@@ -59,3 +63,11 @@ for (root, dirs, files) in walk("../source_code/src/"):
             for line in data:
                 f.write(line)
             f.close()
+
+try:
+    mkdir(src_directory + "logger")
+    copyfile('./logger/Logger.java', src_directory + "logger/Logger.java")
+except OSError:
+    print ("Error, try again")
+else:
+    print ("Success")
