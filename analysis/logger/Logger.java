@@ -1,4 +1,4 @@
-package src.logger;
+package logger;
 
 import javax.swing.event.ChangeListener;
 import java.io.*;

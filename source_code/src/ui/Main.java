@@ -1,4 +1,4 @@
-package src.ui;
+package ui;
 
 import ast.PROGRAM;
 import libs.Node;
