@@ -1,9 +1,9 @@
 <br />
 <p align="center">
-  <h3 align="center">CPSC 410 Visualization Project</h3>
+  <h3 align="center">Vistar</h3>
 
   <p align="center">
-    A visualization tool for Java programs that represents the number of global variable changes as stars.
+    A visualization tool for Java programs that visualizes the number of global variable changes as stars.
 </p>
 
 <!-- ABOUT THE PROJECT -->
