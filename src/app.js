@@ -45,7 +45,7 @@ Object.keys(data).forEach(className => {
             elem.append(tooltip);
             tooltip.appendChild(tooltipText);
 
-            var two = new Two({ width: 200, height: 200 }).appendTo(tooltip);
+            var two = new Two({ width: 250, height: 200 }).appendTo(tooltip);
             var star = two.makeStar(0, 0, 55, 15, numberOfValues[i].length );
             star.fill = starColor;
             star.stroke = hexToComplimentary(starColor) ;
@@ -71,19 +71,19 @@ Object.keys(data).forEach(className => {
                     // This code is called everytime two.update() is called.
                     // Effectively 60 times per second.
                     if (star.scale > 0.9999) {
-                        star.scale = star.rotation = 0;
+                        star.scale = 0;
                     }
-                    var t = (1 - star.scale) * 0.09 * Math.PI;
+                    var t = (1 - star.scale) * 0.05 * Math.PI;
                     if (star.sides >= changedTimes) {
-                        star.sides = 0;
+                        star.sides = changedTimes;
+                        star.scale = 0.9999;
+                    } else if (star.sides + t > changedTimes) {
+                        star.sides += t;
+                        t = 0;
+                    } else {
+                        star.scale += t;
+                        star.sides += t;
                     }
-                    if (star.sides + t > changedTimes) {
-                        star.sides -= t;
-                        // t = 0;
-                    }
-                    star.scale += t;
-                    star.sides += t;
-
                 }).play();
             } else {
                 two.update();
