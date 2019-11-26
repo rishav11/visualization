@@ -3,7 +3,23 @@
         <title> Visualization </title>
         <style>
             h3 {width: 100%; margin-left: 40px}
-            div {display: inline}
+            div {display: inline; margin: 10px}
+
+            /* Tooltip text */
+            .tooltiptext {
+                visibility: hidden;
+                text-align: center;
+                padding: 5px;
+                position:absolute;
+                background-color: beige;
+                color: black;
+            }
+
+            .tooltip:hover .tooltiptext {
+                visibility: visible;
+                z-index: 100;
+            }
+
         </style>
         <script type="text/javascript" src="./sample.js"></script>
         <script typr="text/javascript" src="../json_converter/output.js"></script>
@@ -13,7 +29,9 @@
     </head>
     <body>
      <!--/   <p id="demo2"> # of Variables </p>-->
-         <p style="text-align: center">This visualization is constrained to Java programs only. Our visualization would show an x-pointed circle/star, where x represents the number of changes that a variable has gone through. Global variables belonging to the same class will be distinguished by being the same color.</p>
+         <p style="text-align: center">This visualization is constrained to Java programs only.</p>
+     <p style="text-align: center">Our visualization would show an x-pointed circle/star, where x represents the number of changes that a variable has gone through.</p>
+     <p style="text-align: center">Global variables belonging to the same class will be distinguished by being the same color.</p>
      <h2 style="border-style: none none solid none; border-width: 2px; padding-bottom: 4px">SuperRex DSL Visualization</h2>
      <script type="text/javascript" src="./app.js"></script>
     </body>

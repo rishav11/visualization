@@ -21,7 +21,6 @@ Object.keys(data).forEach(className => {
     document.body.append(div);
     Object.keys(data[className]).forEach(instance =>{
         for(var i = 0; i < Object.keys(data[className][instance]).length; i++) {
-
             // Gets & prints the data from the sample.js file.
             // document.getElementById('demo1').innerHTML = data["ast.EXPRESSION"]["@2cb4c3ab"][i+1] ;
 
@@ -36,16 +35,24 @@ Object.keys(data).forEach(className => {
             //document.getElementById('demo1').innerHTML = numberOfValues[i].length ;
 
             var elem = document.getElementById(className);
-            var two = new Two({ width: 360, height: 200 }).appendTo(elem);
+            tooltip = document.createElement("div");
+            tooltipText = document.createElement("span");
+            tooltip.setAttribute("class", "tooltip" );
+            tooltipText.setAttribute("class", "tooltiptext" );
+            var variableValue = Object.values(data[className][instance])[i];
+            tooltipText.innerHTML = variableValue;
+            elem.append(tooltip);
+            tooltip.appendChild(tooltipText);
 
-            var star = two.makeStar(60, 0, 40, 10, numberOfValues[i].length );
+            var two = new Two({ width: 200, height: 200 }).appendTo(tooltip);
+            var star = two.makeStar(0, 0, 40, 10, numberOfValues[i].length );
             star.fill = starColor;
             star.stroke = hexToComplimentary(starColor) ;
-            var variableName = new Two.Text(Object.keys(data[className][instance])[i], 68, 68, starColor);
-            var variableValue = new Two.Text(Object.values(data[className][instance])[i], 68, 90, {width: "50%", starColor});
-
+            var variableName = new Two.Text(Object.keys(data[className][instance])[i], 0, 60, starColor);
+            var changeText = "Value changed " +  numberOfValues[i].length + " times";
+            var variableValueChange = new Two.Text(changeText, 0, 80, starColor);
             // Groups can take an array of shapes and/or groups.
-            var group = two.makeGroup(star, variableName, variableValue);
+            var group = two.makeGroup(star, variableName, variableValueChange);
             // And have translation, rotation, scale like all shapes.
             group.translation.set(two.width / 2, two.height / 2);
             //  group.rotation = Math.PI;
