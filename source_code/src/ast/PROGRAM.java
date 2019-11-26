@@ -1,4 +1,5 @@
 package ast;
+import logger.Logger;
 
 import libs.Node;
 
@@ -20,6 +21,7 @@ public class PROGRAM extends Node {
             }
             s.parse();
             statements.add(s);
+Logger.log(this, "statements");
         }
     }
 

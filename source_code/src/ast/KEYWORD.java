@@ -1,4 +1,5 @@
 package ast;
+import logger.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,22 +11,31 @@ public class KEYWORD extends STATEMENT {
     public void parse() {
         if (tokenizer.checkToken("character")) {
             k = new CHARDEF();
+Logger.log(this, "k");
         } else if (tokenizer.checkToken("digit")) {
             k = new DIGITDEF();
+Logger.log(this, "k");
         } else if (tokenizer.checkToken("(\"([^\"])*\")")) {
             k = new STRINGDEF();
+Logger.log(this, "k");
         } else if (tokenizer.checkToken("any")) {
             k = new STRINGDEF();
+Logger.log(this, "k");
         } else if (tokenizer.checkToken("non-digit")) {
             k = new STRINGDEF();
+Logger.log(this, "k");
         } else if (tokenizer.checkToken("whitespace")) {
             k = new STRINGDEF();
+Logger.log(this, "k");
         } else if (tokenizer.checkToken("non-whitespace")) {
             k = new STRINGDEF();
+Logger.log(this, "k");
         } else if (tokenizer.checkToken("newline")) {
             k = new STRINGDEF();
+Logger.log(this, "k");
         } else if (tokenizer.checkToken("tab")) {
             k = new STRINGDEF();
+Logger.log(this, "k");
         }
         k.parse();
     }

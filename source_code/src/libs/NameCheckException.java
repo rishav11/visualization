@@ -1,4 +1,5 @@
 package libs;
+import logger.Logger;
 
 /**
  * Created by Rishav on 2019-10-13.

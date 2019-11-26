@@ -1,4 +1,5 @@
 package ast;
+import logger.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,13 +11,17 @@ public class CHARCONSTRAINT extends CHARDEF {
     public void parse() {
         tokenizer.getAndCheckNext("from");
         chars.add(tokenizer.getNext());
+Logger.log(this, "chars");
         tokenizer.getAndCheckNext("to");
         chars.add(tokenizer.getNext());
+Logger.log(this, "chars");
         while (tokenizer.checkToken("and")) {
             tokenizer.getAndCheckNext("and");
             chars.add(tokenizer.getNext());
+Logger.log(this, "chars");
             tokenizer.getAndCheckNext("to");
             chars.add(tokenizer.getNext());
+Logger.log(this, "chars");
         }
     }
 
