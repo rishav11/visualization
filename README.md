@@ -1,9 +1,9 @@
 <br />
 <p align="center">
-  <h3 align="center">CPSC 410 Visualization Project</h3>
+  <h3 align="center">Vistar</h3>
 
   <p align="center">
-    A tool that analyzes Java programs and represents the number of variable changes as stars.
+    A visualization tool for Java programs that visualizes the number of global variable changes as stars.
 </p>
 
 <!-- ABOUT THE PROJECT -->
@@ -14,13 +14,15 @@ For our project, we were really motivated to help solve a problem that we've all
 Our main goal of this was to help software developers with debugging so that they can spend less time writing debug messages and quickly be able to verify if global variables were being updated as expected.
 
 Our visualization will help identify:
-* unnecessary or redundant variableshelp
-* which classes make the most variables changes
+* classes, class instances, declared fields and field values
+* how many times a variable has changed
+* which classes make the most variable changes
+* any unnecessary or redundant variables
 
 ## Analysis Used
 Our visualization uses **semantic dynamic analysis** to achieve the desired result.
-* Speifically, in Java we used the built-in reflection class to get classes, class instances, declared fields and field values.
-* We then have a method caled `log()` that is injected (via a python script) into all Java files at lines where a global variables is changed 
+* Speifically, in Java we used the built-in reflection class to get class names, class instances, declared fields and field values.
+* We then have a method called `log()` that is injected (via a python script) into all Java files at lines where a global variable is changed. 
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -49,7 +51,7 @@ python json_converter/converter_beta.py
 ## Contributors
 
 ### Viniel
-* Created Logger class which gets global variable values and class names and writes it to variables_log.txt
+* Created Logger class which gets class names, class instances, global variables and their values and writes it to variables_log.txt
 * Wrote python script to inject logger lines into Java files at lines where a global variable is changed
 * Helped perform user studies
 
@@ -65,6 +67,7 @@ python json_converter/converter_beta.py
 
 ### Ann
 * Looped through json object to group stars by class
+* Created tooltip to display values of variables on hover
 * Styled stars, groups and text to make it easy to read and understand
 * Helped perform user studies
 
