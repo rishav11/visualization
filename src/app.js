@@ -49,6 +49,7 @@ Object.keys(data).forEach(className => {
             star.fill = starColor;
             star.stroke = hexToComplimentary(starColor) ;
             var variableName = new Two.Text(Object.keys(data[className][instance])[i], 0, 70, starColor);
+            var changedTimes = numberOfValues[i].length;
             var changeText = "Value changed " +  numberOfValues[i].length + (numberOfValues[i].length > 1 ? " times" : " time");
             var variableValueChange = new Two.Text(changeText, 0, 90, starColor);
             // Groups can take an array of shapes and/or groups.
@@ -56,12 +57,33 @@ Object.keys(data).forEach(className => {
             // And have translation, rotation, scale like all shapes.
             group.translation.set(two.width / 2, two.height / 2);
             //  group.rotation = Math.PI;
-            //group.scale = 0.75;
 
             // You can also set the same properties a shape have.
             group.linewidth = 4;
+            if (changedTimes > 1) {
+                star.sides = 0;
+                two.bind('update', function (frameCount) {
+                    // This code is called everytime two.update() is called.
+                    // Effectively 60 times per second.
 
-            two.update();
+                    if (star.scale > 0.9999) {
+                        star.scale = star.rotation = 0;
+                    }
+                    var t = (1 - star.scale) * 0.09 * Math.PI;
+                    if (star.sides >= changedTimes) {
+                        star.sides = 0;
+                    }
+                    if (star.sides + t > changedTimes) {
+                        star.sides = changedTimes;
+                        t = 0;
+                    }
+                    star.scale += t;
+                    star.sides += t;
+
+                }).play();
+            } else {
+                two.update();
+            }
         }
     });
     starColor = getRandomColor();
