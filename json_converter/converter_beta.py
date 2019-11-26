@@ -71,7 +71,8 @@ def main():
 
 	# pp.pprint(final_dict)
 
-	with open('output.json', 'w') as outfile:
+	with open('output.js', 'w') as outfile:
+			outfile.write("data=\n")
 			json.dump(final_dict, outfile, indent=4)
 	
 	f.close()
